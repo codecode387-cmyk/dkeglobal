@@ -5,98 +5,54 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>DKE Global Logistics Limited — Reliable Global Logistics & Freight Solutions</title>
 <meta name="description" content="DKE Global Logistics Limited — trusted freight forwarding and logistics partner since 2018. Air, sea, road, rail, customs, warehousing, and end-to-end supply chain." />
-<meta name="keywords" content="DKE Global Logistics, freight forwarding Lagos, logistics Nigeria, air freight, sea freight, customs brokerage, warehousing, supply chain" />
-<meta property="og:title" content="DKE Global Logistics Limited — Reliable Global Logistics & Freight Solutions" />
-<meta property="og:description" content="Secure, fast, and coordinated logistics across air, road, rail, customs, warehousing, and end-to-end supply chain operations." />
-<meta property="og:type" content="website" />
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 <script src="https://cdn.tailwindcss.com"></script>
 <script>
   tailwind.config = {
-    theme: {
-      extend: {
-        colors: {
-          navy: '#0B1E3A',
-          royal: '#1E4FD8',
-          royalDark: '#163BB0',
-          accent: '#F5A623',
-          silver: '#C9CDD2',
-          offwhite: '#F7F9FC',
-          ink: '#0E1626',
-        },
-        fontFamily: { sans: ['Inter', 'system-ui', 'sans-serif'] },
-      },
-    },
+    theme: { extend: {
+      colors: { navy:'#0B1E3A', royal:'#1E4FD8', royalDark:'#163BB0', accent:'#F5A623', silver:'#C9CDD2', offwhite:'#F7F9FC', ink:'#0E1626' },
+      fontFamily: { sans: ['Inter','system-ui','sans-serif'] },
+    } },
   };
 </script>
 <style>
   html { scroll-behavior: smooth; }
   body { font-family: 'Inter', system-ui, sans-serif; }
-  .btn-royal { display:inline-flex; align-items:center; justify-content:center; gap:.5rem; background:#1E4FD8; color:#fff; padding:.85rem 1.75rem; border-radius:.75rem; font-weight:600; transition:.2s; box-shadow:0 8px 24px -8px rgba(30,79,216,.5); }
-  .btn-royal:hover { background:#163BB0; transform:translateY(-1px); }
+  .btn-royal { display:inline-flex; align-items:center; justify-content:center; gap:.5rem; background:#1E4FD8; color:#fff; padding:.85rem 1.75rem; border-radius:.75rem; font-weight:600; transition:.2s; }
+  .btn-royal:hover { background:#163BB0; }
   .btn-outline { display:inline-flex; align-items:center; justify-content:center; gap:.5rem; border:1.5px solid rgba(255,255,255,.7); color:#fff; padding:.85rem 1.75rem; border-radius:.75rem; font-weight:600; transition:.2s; }
-  .btn-outline:hover { background:rgba(255,255,255,.12); border-color:#fff; }
+  .btn-outline:hover { background:rgba(255,255,255,.12); }
   .btn-gold { display:inline-flex; align-items:center; justify-content:center; gap:.5rem; background:#F5A623; color:#0B1E3A; padding:.85rem 1.75rem; border-radius:.75rem; font-weight:700; transition:.2s; }
   .btn-gold:hover { background:#ffbe4d; }
-  .card { transition: transform .3s ease, box-shadow .3s ease; }
+  .card { transition: transform .3s, box-shadow .3s; }
   .card:hover { transform: translateY(-4px); box-shadow: 0 24px 48px -24px rgba(11,30,58,.25); }
-  details > summary { list-style: none; cursor: pointer; }
-  details > summary::-webkit-details-marker { display: none; }
-  details[open] > summary .plus { transform: rotate(45deg); }
-  .plus { transition: transform .2s ease; display:inline-block; }
   .hero-overlay { background: linear-gradient(105deg, rgba(11,30,58,.92) 0%, rgba(11,30,58,.72) 45%, rgba(11,30,58,.35) 100%); }
   .gold-underline { background-image: linear-gradient(transparent 60%, rgba(245,166,35,.35) 60%); background-repeat: no-repeat; background-size: 100% 100%; }
   .marquee { display:flex; width:max-content; animation: marquee 28s linear infinite; }
   @keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+  .page { display: none; }
+  .page.active { display: block; }
+  .reveal { opacity: 0; transform: translateY(28px); transition: opacity .7s, transform .7s; }
+  .reveal.in-view { opacity: 1; transform: translateY(0); }
+  .review-card { opacity: 0; transform: translateY(24px); transition: opacity .6s, transform .6s, box-shadow .3s; }
+  .review-card.in-view { opacity: 1; transform: translateY(0); }
+  .review-card:hover { transform: translateY(-4px); box-shadow: 0 24px 48px -24px rgba(11,30,58,.35); }
+  .stars { color:#F5A623; letter-spacing:2px; }
+  .toast { position:fixed; top:90px; right:20px; z-index:100; padding:14px 20px; border-radius:12px; background:#0B1E3A; color:#fff; box-shadow:0 20px 40px -20px rgba(0,0,0,.4); opacity:0; transform:translateY(-10px); transition:.25s; pointer-events:none; }
+  .toast.show { opacity:1; transform:translateY(0); }
+  .toast.success { background:#15803d; }
   @media (prefers-reduced-motion: reduce) {
     .marquee { animation: none; }
     html { scroll-behavior: auto; }
-    .reveal, .counter-anim, .review-card { animation: none !important; opacity: 1 !important; transform: none !important; }
+    .reveal, .review-card { opacity:1 !important; transform:none !important; transition:none; }
   }
-  .page { display: none; }
-  .page.active { display: block; }
-
-  /* ===== Scroll reveal animation ===== */
-  .reveal { opacity: 0; transform: translateY(28px); transition: opacity .7s ease, transform .7s ease; will-change: opacity, transform; }
-  .reveal.in-view { opacity: 1; transform: translateY(0); }
-
-  /* ===== Stat counter pulse ===== */
-  .counter-anim { animation: counterPop .9s ease-out; }
-  @keyframes counterPop {
-    0% { transform: scale(0.85); opacity: 0; }
-    60% { transform: scale(1.06); opacity: 1; }
-    100% { transform: scale(1); opacity: 1; }
-  }
-
-  /* ===== Toast ===== */
-  .toast { position: fixed; top: 90px; right: 20px; z-index: 100; padding: 14px 20px; border-radius: 12px; background: #0B1E3A; color: #fff; box-shadow: 0 20px 40px -20px rgba(0,0,0,.4); opacity: 0; transform: translateY(-10px); transition: .25s; }
-  .toast.show { opacity: 1; transform: translateY(0); }
-  .toast.success { background: #15803d; }
-  .toast.error { background: #b91c1c; }
-
-  /* ===== Reviews ===== */
-  .review-card {
-    opacity: 0;
-    transform: translateY(24px) scale(0.98);
-    transition: opacity .6s ease, transform .6s ease, box-shadow .3s ease;
-    will-change: opacity, transform;
-  }
-  .review-card.in-view {
-    opacity: 1;
-    transform: translateY(0) scale(1);
-  }
-  .review-card:hover {
-    transform: translateY(-4px) scale(1.01);
-    box-shadow: 0 24px 48px -24px rgba(11,30,58,.35);
-  }
-  .stars { color: #F5A623; letter-spacing: 2px; font-size: 14px; }
 </style>
 </head>
 <body class="bg-offwhite text-ink antialiased">
 
-<!-- ===== HEADER ===== -->
+<!-- ============ HEADER ============ -->
 <header class="sticky top-0 z-40 bg-navy text-white shadow-lg">
   <div class="mx-auto flex max-w-7xl items-center justify-between px-4 py-3.5 md:px-8">
     <a href="#/" class="flex items-center gap-2.5">
@@ -104,14 +60,14 @@
       <span class="text-base font-black tracking-tight md:text-lg">DKE <span class="text-accent">GLOBAL</span></span>
     </a>
     <ul class="hidden items-center gap-6 lg:flex">
-      <li><a href="#/" class="text-sm text-silver hover:text-white transition nav-link">Home</a></li>
-      <li><a href="#/about" class="text-sm text-silver hover:text-white transition nav-link">About Us</a></li>
-      <li><a href="#/services" class="text-sm text-silver hover:text-white transition nav-link">Services</a></li>
-      <li><a href="#/industries" class="text-sm text-silver hover:text-white transition nav-link">Industries</a></li>
-      <li><a href="#/reviews" class="text-sm text-silver hover:text-white transition nav-link">Reviews</a></li>
-      <li><a href="#/blog" class="text-sm text-silver hover:text-white transition nav-link">Blog</a></li>
-      <li><a href="#/faq" class="text-sm text-silver hover:text-white transition nav-link">FAQ</a></li>
-      <li><a href="#/contact" class="text-sm text-silver hover:text-white transition nav-link">Contact</a></li>
+      <li><a href="#/" class="text-sm text-silver hover:text-white nav-link">Home</a></li>
+      <li><a href="#/about" class="text-sm text-silver hover:text-white nav-link">About Us</a></li>
+      <li><a href="#/services" class="text-sm text-silver hover:text-white nav-link">Services</a></li>
+      <li><a href="#/industries" class="text-sm text-silver hover:text-white nav-link">Industries</a></li>
+      <li><a href="#/reviews" class="text-sm text-silver hover:text-white nav-link">Reviews</a></li>
+      <li><a href="#/blog" class="text-sm text-silver hover:text-white nav-link">Blog</a></li>
+      <li><a href="#/faq" class="text-sm text-silver hover:text-white nav-link">FAQ</a></li>
+      <li><a href="#/contact" class="text-sm text-silver hover:text-white nav-link">Contact</a></li>
       <li><a href="#/quote" class="btn-gold !px-4 !py-2 text-sm">Get a Quote</a></li>
     </ul>
     <button id="menuBtn" aria-label="Toggle menu" aria-expanded="false" class="lg:hidden">
@@ -135,673 +91,345 @@
 
 <main id="app">
 
-  <!-- ================= HOME ================= -->
-  <section data-page="home">
+<!-- ============ HOME (single active page) ============ -->
+<div class="page" data-page="home">
 
-    <!-- HERO -->
-    <section class="relative flex min-h-[88vh] items-center overflow-hidden bg-navy text-white">
-      <img src="https://images.unsplash.com/photo-1494412574643-ff11b0a5c1c3?auto=format&fit=crop&w=1920&q=80"
-           alt="International container port operations (illustrative)" class="absolute inset-0 h-full w-full object-cover" />
-      <div class="hero-overlay absolute inset-0"></div>
-      <div class="relative mx-auto max-w-7xl px-4 py-24 md:px-8">
-        <p class="mb-4 text-xs font-bold uppercase tracking-[0.3em] text-accent">DKE GLOBAL LOGISTICS.</p>
-        <p class="mb-3 text-sm font-semibold text-silver">Trusted Logistics Partner Since 2018</p>
-        <h1 class="max-w-4xl text-4xl font-black leading-[1.05] md:text-6xl lg:text-7xl">
-          Reliable Global Logistics &amp; <span class="gold-underline">Freight Solutions</span>
-        </h1>
-        <p class="mt-6 max-w-2xl text-lg text-silver md:text-xl">
-          Secure, fast, and coordinated logistics across air, road, rail, customs,
-          warehousing, and end-to-end supply chain operations.
-        </p>
-        <div class="mt-9 flex flex-wrap gap-3">
-          <a href="#/quote" class="btn-gold">Get a Quote</a>
-          <a href="#/services" class="btn-outline">View Services</a>
-          <a href="tel:+2349052221381" class="btn-outline">Call Us</a>
-        </div>
-      </div>
-    </section>
-
-    <!-- STATS (ANIMATED COUNTERS) -->
-    <section class="bg-white py-16">
-      <div class="mx-auto grid max-w-7xl gap-6 px-4 md:grid-cols-3 md:px-8">
-        <div class="reveal rounded-2xl border border-silver/40 bg-white p-8 text-center shadow-sm">
-          <p class="counter-anim text-5xl font-black text-royal" data-counter="120" data-suffix="+">0+</p>
-          <p class="mt-2 text-sm font-semibold uppercase tracking-widest text-ink/60">Deliveries Done</p>
-        </div>
-        <div class="reveal rounded-2xl border border-silver/40 bg-white p-8 text-center shadow-sm" style="transition-delay:.1s">
-          <p class="counter-anim text-5xl font-black text-royal" data-counter="18" data-suffix="+">0+</p>
-          <p class="mt-2 text-sm font-semibold uppercase tracking-widest text-ink/60">Countries Served</p>
-        </div>
-        <div class="reveal rounded-2xl border border-silver/40 bg-white p-8 text-center shadow-sm" style="transition-delay:.2s">
-          <p class="counter-anim text-5xl font-black text-royal" data-counter="98" data-suffix="%">0%</p>
-          <p class="mt-2 text-sm font-semibold uppercase tracking-widest text-ink/60">Client Satisfaction</p>
-        </div>
-      </div>
-      <p class="mx-auto mt-6 max-w-2xl px-4 text-center text-xs text-ink/50">
-        Statistics are configurable and can be updated by the company.
-      </p>
-    </section>
-
-    <!-- SHIPMENT DESK + CARGO -->
-    <section class="bg-offwhite py-16">
-      <div class="mx-auto grid max-w-7xl gap-6 px-4 md:grid-cols-2 md:px-8">
-        <div class="reveal rounded-2xl bg-white p-8 shadow-sm">
-          <p class="text-xs font-bold uppercase tracking-[0.25em] text-accent">Shipment Desk</p>
-          <p class="mt-3 text-xl font-bold text-navy">Coordinated Lagos to global trade routes.</p>
-        </div>
-        <div class="reveal rounded-2xl bg-navy p-8 text-white shadow-sm" style="transition-delay:.1s">
-          <p class="text-xs font-bold uppercase tracking-[0.25em] text-accent">Cargo Volume</p>
-          <p class="mt-3 text-xl font-bold">12,480 tons — Priority freight moving today.</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- MOVING SERVICES BANNER -->
-    <section class="overflow-hidden bg-navy py-5 text-white">
-      <div class="marquee">
-        <div class="flex items-center gap-10 whitespace-nowrap px-6 text-sm font-semibold uppercase tracking-[0.25em] text-silver">
-          <span>Air Freight</span><span class="text-accent">·</span>
-          <span>Sea Freight</span><span class="text-accent">·</span>
-          <span>FCL &amp; LCL</span><span class="text-accent">·</span>
-          <span>Road Transport</span><span class="text-accent">·</span>
-          <span>Rail Transport</span><span class="text-accent">·</span>
-          <span>Customs Brokerage</span><span class="text-accent">·</span>
-          <span>Warehousing</span><span class="text-accent">·</span>
-          <span>Project Cargo</span><span class="text-accent">·</span>
-        </div>
-        <div class="flex items-center gap-10 whitespace-nowrap px-6 text-sm font-semibold uppercase tracking-[0.25em] text-silver" aria-hidden="true">
-          <span>Air Freight</span><span class="text-accent">·</span>
-          <span>Sea Freight</span><span class="text-accent">·</span>
-          <span>FCL &amp; LCL</span><span class="text-accent">·</span>
-          <span>Road Transport</span><span class="text-accent">·</span>
-          <span>Rail Transport</span><span class="text-accent">·</span>
-          <span>Customs Brokerage</span><span class="text-accent">·</span>
-          <span>Warehousing</span><span class="text-accent">·</span>
-          <span>Project Cargo</span><span class="text-accent">·</span>
-        </div>
-      </div>
-    </section>
-
-    <!-- ABOUT (single instance, no duplicates) -->
-    <section class="bg-white py-20">
-      <div class="mx-auto grid max-w-7xl gap-12 px-4 md:grid-cols-2 md:px-8">
-        <img src="https://images.unsplash.com/photo-1578575437130-527eed3abbec?auto=format&fit=crop&w=1200&q=80"
-             alt="Cargo vessel and shipping containers (illustrative)" class="reveal h-full w-full rounded-2xl object-cover shadow-lg" loading="lazy" />
-        <div class="reveal">
-          <p class="text-xs font-bold uppercase tracking-[0.25em] text-accent">7+ Years of Excellence</p>
-          <h2 class="mt-3 text-3xl font-black md:text-4xl">Nigeria's Trusted Freight and Logistics Partner</h2>
-          <p class="mt-5 text-ink/70">
-            DKE GLOBAL LOGISTICS is a trusted modern logistics and freight forwarding company serving clients worldwide from Lagos, Nigeria. We simplify global trade through air, sea, and land solutions backed by clear communication and careful execution.
-          </p>
-          <p class="mt-4 text-ink/70">
-            We do not just move cargo; we move opportunities, growth, and success for our clients.
-          </p>
-          <div class="mt-8 space-y-4">
-            <div class="rounded-xl border border-silver/40 bg-offwhite p-5">
-              <p class="font-bold text-navy">Beyond Borders</p>
-              <p class="mt-1 text-sm text-ink/70">Connecting businesses across continents with dependable global partners and networks.</p>
-            </div>
-            <div class="rounded-xl border border-silver/40 bg-offwhite p-5">
-              <p class="font-bold text-navy">Beyond Stress</p>
-              <p class="mt-1 text-sm text-ink/70">Professional handling and hassle-free processes from planning to delivery.</p>
-            </div>
-            <div class="rounded-xl border border-silver/40 bg-offwhite p-5">
-              <p class="font-bold text-navy">Integrity First</p>
-              <p class="mt-1 text-sm text-ink/70">Honesty, transparency, and ethical practices guide every operation.</p>
-            </div>
-          </div>
-          <a href="#/about" class="btn-royal mt-8">Read Our Story</a>
-        </div>
-      </div>
-    </section>
-
-    <!-- MISSION VISION VALUES -->
-    <section class="bg-offwhite py-20">
-      <div class="mx-auto max-w-7xl px-4 md:px-8">
-        <p class="reveal mx-auto max-w-2xl text-center text-ink/70">
-          These principles guide how we serve clients, handle cargo, and build long-term logistics confidence.
-        </p>
-        <div class="mt-12 grid gap-6 md:grid-cols-3">
-          <div class="reveal rounded-2xl bg-white p-8 shadow-sm">
-            <p class="text-xs font-bold uppercase tracking-[0.25em] text-accent">Our Mission</p>
-            <h3 class="mt-3 text-xl font-black text-navy">Deliver logistics solutions that simplify global trade.</h3>
-            <p class="mt-3 text-sm text-ink/70">To deliver efficient, reliable, and innovative logistics solutions that foster seamless connections between businesses and individuals worldwide.</p>
-          </div>
-          <div class="reveal rounded-2xl bg-white p-8 shadow-sm" style="transition-delay:.1s">
-            <p class="text-xs font-bold uppercase tracking-[0.25em] text-accent">Our Vision</p>
-            <h3 class="mt-3 text-xl font-black text-navy">Become a leading global logistics brand.</h3>
-            <p class="mt-3 text-sm text-ink/70">To redefine seamless and stress-free cross-border movement of goods through DKE's innovative solutions.</p>
-          </div>
-          <div class="reveal rounded-2xl bg-navy p-8 text-white shadow-sm" style="transition-delay:.2s">
-            <p class="text-xs font-bold uppercase tracking-[0.25em] text-accent">Core Values</p>
-            <h3 class="mt-3 text-xl font-black">Driven by integrity, powered by innovation.</h3>
-            <p class="mt-3 text-sm text-silver">Committed to excellence, focused on customers, growing through collaboration, sustaining the future, and guided by faith and purpose.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- FOUNDER -->
-    <section class="bg-white py-20">
-      <div class="mx-auto grid max-w-6xl gap-10 px-4 md:grid-cols-5 md:px-8">
-        <div class="reveal md:col-span-2">
-          <div class="aspect-[4/5] overflow-hidden rounded-2xl bg-navy shadow-lg">
-            <div class="flex h-full w-full items-center justify-center bg-gradient-to-br from-navy to-royal text-white">
-              <div class="text-center px-6">
-                <p class="text-6xl font-black text-accent">DKE</p>
-                <p class="mt-3 text-xs uppercase tracking-[0.25em] text-silver">Portrait Area</p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="reveal md:col-span-3" style="transition-delay:.1s">
-          <p class="text-xs font-bold uppercase tracking-[0.25em] text-accent">Founder / CEO</p>
-          <h2 class="mt-3 text-3xl font-black md:text-4xl">A Message from Our Founder</h2>
-          <blockquote class="mt-6 border-l-4 border-accent pl-6 text-lg leading-relaxed text-ink/80">
-            “At DKE GLOBAL LOGISTICS, our mission is to make logistics feel clear, dependable, and stress-free for every client we serve. We understand that every shipment represents trust, opportunity, and business growth, so we handle each movement with care, integrity, and purpose.
-            <br /><br />
-            From Lagos to the world, we remain committed to helping businesses and individuals move beyond borders with confidence.”
-          </blockquote>
-          <div class="mt-6">
-            <p class="font-bold text-navy">Founder / CEO</p>
-            <p class="text-sm text-ink/60">DKE Global Logistics Limited</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- SPECIALIZED SUPPORT -->
-    <section class="bg-offwhite py-20">
-      <div class="mx-auto max-w-7xl px-4 md:px-8">
-        <div class="reveal text-center">
-          <h2 class="text-3xl font-black md:text-4xl">Logistics Details Handled with Expert Care</h2>
-          <p class="mx-auto mt-3 max-w-2xl text-ink/70">From regulated cargo to complex clearance and oversized movement, we support the work behind successful shipments.</p>
-        </div>
-        <div class="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-          <div class="reveal card rounded-2xl bg-white p-6 shadow-sm">
-            <h3 class="text-lg font-black text-navy">DG Packing &amp; Documentation</h3>
-            <p class="mt-2 text-sm text-ink/70">Compliant packaging and accurate documentation for hazardous cargo in line with international regulations.</p>
-          </div>
-          <div class="reveal card rounded-2xl bg-white p-6 shadow-sm" style="transition-delay:.1s">
-            <h3 class="text-lg font-black text-navy">Customs Clearance</h3>
-            <p class="mt-2 text-sm text-ink/70">Import and export clearance, duty assessment, HS code classification, permits, and transit customs handling.</p>
-          </div>
-          <div class="reveal card rounded-2xl bg-white p-6 shadow-sm" style="transition-delay:.2s">
-            <h3 class="text-lg font-black text-navy">Project Cargo</h3>
-            <p class="mt-2 text-sm text-ink/70">Tailored planning for oversized, high-value, and complex shipments, including surveys, charter support, tracking, and supervision.</p>
-          </div>
-          <div class="reveal card rounded-2xl bg-white p-6 shadow-sm" style="transition-delay:.3s">
-            <h3 class="text-lg font-black text-navy">Warehousing &amp; Distribution</h3>
-            <p class="mt-2 text-sm text-ink/70">Secure storage, consolidation, inventory organization, and dependable distribution with on-time delivery focus.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- COMPLETE SERVICES -->
-    <section class="bg-white py-20">
-      <div class="mx-auto max-w-7xl px-4 md:px-8">
-        <div class="reveal text-center">
-          <h2 class="text-3xl font-black md:text-4xl">Complete Logistics Solutions</h2>
-          <p class="mx-auto mt-3 max-w-2xl text-ink/70">Every service now has its own detailed page with modern layouts, descriptions, and matching logistics images.</p>
-        </div>
-        <div class="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3" id="home-services-grid"></div>
-      </div>
-    </section>
-
-    <!-- WHY CHOOSE US -->
-    <section class="bg-navy py-20 text-white">
-      <div class="mx-auto max-w-7xl px-4 md:px-8">
-        <div class="reveal text-center">
-          <h2 class="text-3xl font-black md:text-4xl">Built for Customers Who Need Clarity and Confidence</h2>
-          <p class="mx-auto mt-3 max-w-2xl text-silver">We combine customer focus, excellence, innovation, collaboration, and a global mindset to make cargo movement easier from start to finish.</p>
-        </div>
-        <div class="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-          <div class="reveal rounded-2xl border border-white/10 bg-white/5 p-6">
-            <h3 class="text-lg font-bold">Customer Focus</h3>
-            <p class="mt-2 text-sm text-silver">Services tailored to each client's needs with care and precision.</p>
-          </div>
-          <div class="reveal rounded-2xl border border-white/10 bg-white/5 p-6" style="transition-delay:.1s">
-            <h3 class="text-lg font-bold">Excellence</h3>
-            <p class="mt-2 text-sm text-silver">Operations designed to meet strong service and handling standards.</p>
-          </div>
-          <div class="reveal rounded-2xl border border-white/10 bg-white/5 p-6" style="transition-delay:.2s">
-            <h3 class="text-lg font-bold">Innovation</h3>
-            <p class="mt-2 text-sm text-silver">Modern tools and strategies that improve efficiency and visibility.</p>
-          </div>
-          <div class="reveal rounded-2xl border border-white/10 bg-white/5 p-6" style="transition-delay:.3s">
-            <h3 class="text-lg font-bold">Faith &amp; Purpose</h3>
-            <p class="mt-2 text-sm text-silver">Serving with humility, purpose, and a commitment to doing the work well.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ===== CUSTOMER REVIEWS (NEW, 10 animated cards) ===== -->
-    <section class="bg-offwhite py-20">
-      <div class="mx-auto max-w-7xl px-4 md:px-8">
-        <div class="reveal text-center">
-          <p class="text-xs font-bold uppercase tracking-[0.3em] text-accent">Customer Reviews</p>
-          <h2 class="mt-3 text-3xl font-black md:text-4xl">Trusted by Importers, Exporters &amp; Growing Businesses</h2>
-          <p class="mx-auto mt-3 max-w-2xl text-ink/70">Real feedback from clients who move cargo with DKE Global Logistics.</p>
-        </div>
-
-        <div class="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3" id="reviews-grid"></div>
-
-        <div class="reveal mt-10 text-center">
-          <a href="#/reviews" class="btn-royal">Read All Reviews</a>
-        </div>
-      </div>
-    </section>
-
-    <!-- INDUSTRIES -->
-    <section class="bg-white py-20">
-      <div class="mx-auto max-w-7xl px-4 md:px-8">
-        <div class="reveal text-center">
-          <h2 class="text-3xl font-black md:text-4xl">Logistics for Businesses That Move Real Goods</h2>
-          <p class="mx-auto mt-3 max-w-2xl text-ink/70">From importers to project contractors, we shape each logistics plan around the cargo, destination, timeline, and receiving conditions.</p>
-        </div>
-        <div class="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-          <div class="reveal card overflow-hidden rounded-2xl bg-white shadow-sm">
-            <img src="https://images.unsplash.com/photo-1553413077-190dd305871c?auto=format&fit=crop&w=800&q=80" alt="Retail and e-commerce logistics (illustrative)" class="h-40 w-full object-cover" loading="lazy" />
-            <div class="p-6">
-              <h3 class="text-lg font-black text-navy">Retail &amp; E-commerce</h3>
-              <p class="mt-2 text-sm text-ink/70">Imports, stock replenishment, warehousing, and distribution for fast-moving consumer goods.</p>
-            </div>
-          </div>
-          <div class="reveal card overflow-hidden rounded-2xl bg-white shadow-sm" style="transition-delay:.1s">
-            <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=800&q=80" alt="Technology and electronics cargo (illustrative)" class="h-40 w-full object-cover" loading="lazy" />
-            <div class="p-6">
-              <h3 class="text-lg font-black text-navy">Technology &amp; Electronics</h3>
-              <p class="mt-2 text-sm text-ink/70">Careful handling for high-value devices, parts, equipment, and time-sensitive replacement cargo.</p>
-            </div>
-          </div>
-          <div class="reveal card overflow-hidden rounded-2xl bg-white shadow-sm" style="transition-delay:.2s">
-            <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=800&q=80" alt="Manufacturing logistics (illustrative)" class="h-40 w-full object-cover" loading="lazy" />
-            <div class="p-6">
-              <h3 class="text-lg font-black text-navy">Manufacturing</h3>
-              <p class="mt-2 text-sm text-ink/70">Inbound raw materials, machinery, spare parts, and outbound goods for production teams.</p>
-            </div>
-          </div>
-          <div class="reveal card overflow-hidden rounded-2xl bg-white shadow-sm" style="transition-delay:.3s">
-            <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=800&q=80" alt="Construction and energy logistics (illustrative)" class="h-40 w-full object-cover" loading="lazy" />
-            <div class="p-6">
-              <h3 class="text-lg font-black text-navy">Construction &amp; Energy</h3>
-              <p class="mt-2 text-sm text-ink/70">Heavy equipment, project cargo, site deliveries, and coordinated movement for complex projects.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- GALLERY -->
-    <section class="bg-offwhite py-20">
-      <div class="mx-auto max-w-7xl px-4 md:px-8">
-        <div class="reveal text-center">
-          <h2 class="text-3xl font-black md:text-4xl">Logistics in Action</h2>
-          <p class="mx-auto mt-3 max-w-2xl text-ink/70">Illustrative imagery of cargo port operations, warehouses, and freight transportation.</p>
-        </div>
-        <div class="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-          <img src="https://images.unsplash.com/photo-1494412574643-ff11b0a5c1c3?auto=format&fit=crop&w=800&q=80" alt="Cargo port operations (illustrative)" class="reveal h-56 w-full rounded-xl object-cover" loading="lazy" />
-          <img src="https://images.unsplash.com/photo-1578575437130-527eed3abbec?auto=format&fit=crop&w=800&q=80" alt="Shipping containers (illustrative)" class="reveal h-56 w-full rounded-xl object-cover" loading="lazy" style="transition-delay:.1s" />
-          <img src="https://images.unsplash.com/photo-1553413077-190dd305871c?auto=format&fit=crop&w=800&q=80" alt="Warehouse operations (illustrative)" class="reveal h-56 w-full rounded-xl object-cover" loading="lazy" style="transition-delay:.2s" />
-          <img src="https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?auto=format&fit=crop&w=800&q=80" alt="Freight trucks (illustrative)" class="reveal h-56 w-full rounded-xl object-cover" loading="lazy" style="transition-delay:.3s" />
-        </div>
-        <p class="mt-6 text-center text-xs text-ink/50">Photographs are illustrative and will be replaced with authentic company photographs when provided.</p>
-      </div>
-    </section>
-
-    <!-- BLOG -->
-    <section class="bg-white py-20">
-      <div class="mx-auto max-w-7xl px-4 md:px-8">
-        <div class="reveal flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
-          <div>
-            <h2 class="text-3xl font-black md:text-4xl">Latest Blog Posts</h2>
-            <p class="mt-3 max-w-xl text-ink/70">Helpful logistics notes for importers, exporters, and businesses planning cargo movement.</p>
-          </div>
-          <a href="#/blog" class="btn-royal text-sm">Visit Blog</a>
-        </div>
-        <div class="mt-10 grid gap-6 md:grid-cols-3" id="home-blog-grid"></div>
-      </div>
-    </section>
-
-    <!-- FINAL CTA -->
-    <section class="relative overflow-hidden bg-navy py-24 text-white">
-      <img src="https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?auto=format&fit=crop&w=1920&q=80"
-           alt="Freight logistics CTA background (illustrative)" class="absolute inset-0 h-full w-full object-cover opacity-25" loading="lazy" />
-      <div class="reveal relative mx-auto max-w-4xl px-4 text-center md:px-8">
-        <h2 class="text-3xl font-black md:text-5xl">Ready to Move Cargo with Confidence?</h2>
-        <p class="mx-auto mt-4 max-w-2xl text-silver">Tell us what you are shipping, where it is going, and when it needs to arrive.</p>
-        <a href="#/quote" class="btn-gold mt-8">Request a Quote</a>
-      </div>
-    </section>
-  </section>
-
-  <!-- ================= ABOUT ================= -->
-  <section data-page="about">
-    <div class="bg-navy py-20 text-white">
-      <div class="mx-auto max-w-7xl px-4 md:px-8">
-        <p class="text-xs font-bold uppercase tracking-[0.25em] text-accent">About Us</p>
-        <h1 class="mt-3 text-4xl font-black md:text-5xl">Nigeria's Trusted Freight and Logistics Partner</h1>
+  <!-- HERO -->
+  <section class="relative flex min-h-[88vh] items-center overflow-hidden bg-navy text-white">
+    <img src="https://images.unsplash.com/photo-1494412574643-ff11b0a5c1c3?auto=format&fit=crop&w=1920&q=80" alt="Container port (illustrative)" class="absolute inset-0 h-full w-full object-cover" />
+    <div class="hero-overlay absolute inset-0"></div>
+    <div class="relative mx-auto max-w-7xl px-4 py-24 md:px-8">
+      <p class="mb-4 text-xs font-bold uppercase tracking-[0.3em] text-accent">DKE GLOBAL LOGISTICS.</p>
+      <p class="mb-3 text-sm font-semibold text-silver">Trusted Logistics Partner Since 2018</p>
+      <h1 class="max-w-4xl text-4xl font-black leading-[1.05] md:text-6xl lg:text-7xl">Reliable Global Logistics &amp; <span class="gold-underline">Freight Solutions</span></h1>
+      <p class="mt-6 max-w-2xl text-lg text-silver md:text-xl">Secure, fast, and coordinated logistics across air, road, rail, customs, warehousing, and end-to-end supply chain operations.</p>
+      <div class="mt-9 flex flex-wrap gap-3">
+        <a href="#/quote" class="btn-gold">Get a Quote</a>
+        <a href="#/services" class="btn-outline">View Services</a>
+        <a href="tel:+2349052221381" class="btn-outline">Call Us</a>
       </div>
     </div>
-    <div class="mx-auto grid max-w-7xl gap-12 px-4 py-20 md:grid-cols-2 md:px-8">
-      <div class="reveal">
-        <img src="https://images.unsplash.com/photo-1578575437130-527eed3abbec?auto=format&fit=crop&w=1200&q=80"
-             alt="Cargo vessel and shipping containers (illustrative)" class="w-full rounded-2xl object-cover shadow-lg" loading="lazy" />
+  </section>
+
+  <!-- STATS (animated counters) -->
+  <section class="bg-white py-16">
+    <div class="mx-auto grid max-w-7xl gap-6 px-4 md:grid-cols-3 md:px-8">
+      <div class="rounded-2xl border border-silver/40 bg-white p-8 text-center shadow-sm">
+        <p class="text-5xl font-black text-royal" data-counter="120" data-suffix="+">0+</p>
+        <p class="mt-2 text-sm font-semibold uppercase tracking-widest text-ink/60">Deliveries Done</p>
       </div>
-      <div class="reveal">
+      <div class="rounded-2xl border border-silver/40 bg-white p-8 text-center shadow-sm">
+        <p class="text-5xl font-black text-royal" data-counter="18" data-suffix="+">0+</p>
+        <p class="mt-2 text-sm font-semibold uppercase tracking-widest text-ink/60">Countries Served</p>
+      </div>
+      <div class="rounded-2xl border border-silver/40 bg-white p-8 text-center shadow-sm">
+        <p class="text-5xl font-black text-royal" data-counter="98" data-suffix="%">0%</p>
+        <p class="mt-2 text-sm font-semibold uppercase tracking-widest text-ink/60">Client Satisfaction</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SHIPMENT DESK + CARGO -->
+  <section class="bg-offwhite py-16">
+    <div class="mx-auto grid max-w-7xl gap-6 px-4 md:grid-cols-2 md:px-8">
+      <div class="rounded-2xl bg-white p-8 shadow-sm">
+        <p class="text-xs font-bold uppercase tracking-[0.25em] text-accent">Shipment Desk</p>
+        <p class="mt-3 text-xl font-bold text-navy">Coordinated Lagos to global trade routes.</p>
+      </div>
+      <div class="rounded-2xl bg-navy p-8 text-white shadow-sm">
+        <p class="text-xs font-bold uppercase tracking-[0.25em] text-accent">Cargo Volume</p>
+        <p class="mt-3 text-xl font-bold">12,480 tons — Priority freight moving today.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES MARQUEE -->
+  <section class="overflow-hidden bg-navy py-5 text-white">
+    <div class="marquee">
+      <div class="flex items-center gap-10 whitespace-nowrap px-6 text-sm font-semibold uppercase tracking-[0.25em] text-silver">
+        <span>Air Freight</span><span class="text-accent">·</span><span>Sea Freight</span><span class="text-accent">·</span><span>FCL &amp; LCL</span><span class="text-accent">·</span><span>Road Transport</span><span class="text-accent">·</span><span>Rail Transport</span><span class="text-accent">·</span><span>Customs Brokerage</span><span class="text-accent">·</span><span>Warehousing</span><span class="text-accent">·</span><span>Project Cargo</span><span class="text-accent">·</span>
+      </div>
+      <div class="flex items-center gap-10 whitespace-nowrap px-6 text-sm font-semibold uppercase tracking-[0.25em] text-silver" aria-hidden="true">
+        <span>Air Freight</span><span class="text-accent">·</span><span>Sea Freight</span><span class="text-accent">·</span><span>FCL &amp; LCL</span><span class="text-accent">·</span><span>Road Transport</span><span class="text-accent">·</span><span>Rail Transport</span><span class="text-accent">·</span><span>Customs Brokerage</span><span class="text-accent">·</span><span>Warehousing</span><span class="text-accent">·</span><span>Project Cargo</span><span class="text-accent">·</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="bg-white py-20">
+    <div class="mx-auto grid max-w-7xl gap-12 px-4 md:grid-cols-2 md:px-8">
+      <img src="https://images.unsplash.com/photo-1578575437130-527eed3abbec?auto=format&fit=crop&w=1200&q=80" alt="Cargo vessel (illustrative)" class="h-full w-full rounded-2xl object-cover shadow-lg" loading="lazy" />
+      <div>
         <p class="text-xs font-bold uppercase tracking-[0.25em] text-accent">7+ Years of Excellence</p>
-        <h2 class="mt-3 text-3xl font-black md:text-4xl">Our Story</h2>
-        <p class="mt-5 text-ink/70">
-          DKE GLOBAL LOGISTICS is a trusted modern logistics and freight forwarding company serving clients worldwide from Lagos, Nigeria. We simplify global trade through air, sea, and land solutions backed by clear communication and careful execution.
-        </p>
-        <p class="mt-4 text-ink/70">
-          We do not just move cargo; we move opportunities, growth, and success for our clients.
-        </p>
-      </div>
-    </div>
-  </section>
-
-  <!-- ================= SERVICES INDEX ================= -->
-  <section data-page="services">
-    <div class="bg-navy py-20 text-white">
-      <div class="mx-auto max-w-7xl px-4 md:px-8">
-        <p class="text-xs font-bold uppercase tracking-[0.25em] text-accent">Services</p>
-        <h1 class="mt-3 text-4xl font-black md:text-5xl">Complete Logistics Solutions</h1>
-        <p class="mt-4 max-w-2xl text-silver">Every service has its own detailed page with modern layouts, descriptions, and matching logistics images.</p>
-      </div>
-    </div>
-    <div class="bg-white py-20">
-      <div class="mx-auto max-w-7xl px-4 md:px-8">
-        <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3" id="services-grid"></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ================= SERVICE DETAIL ================= -->
-  <section data-page="service">
-    <div class="bg-navy py-16 text-white">
-      <div class="mx-auto max-w-7xl px-4 md:px-8">
-        <nav class="text-xs text-silver">
-          <a href="#/" class="hover:text-accent">Home</a> /
-          <a href="#/services" class="hover:text-accent">Services</a> /
-          <span class="text-accent" id="svc-breadcrumb"></span>
-        </nav>
-        <h1 class="mt-4 text-4xl font-black md:text-5xl" id="svc-title"></h1>
-      </div>
-    </div>
-    <div class="mx-auto grid max-w-7xl gap-12 px-4 py-20 md:grid-cols-3 md:px-8">
-      <div class="md:col-span-2">
-        <img id="svc-image" src="" alt="" class="w-full rounded-2xl object-cover shadow-lg" loading="lazy" />
-        <p id="svc-desc" class="mt-6 text-lg text-ink/80"></p>
-        <div class="mt-8 rounded-2xl border border-silver/40 bg-offwhite p-6">
-          <p class="font-bold text-navy">Ready to discuss this service?</p>
-          <p class="mt-1 text-sm text-ink/70">Get a personalised quote from our team.</p>
-          <a href="#/quote" class="btn-royal mt-4">Request a Quote</a>
+        <h2 class="mt-3 text-3xl font-black md:text-4xl">Nigeria's Trusted Freight and Logistics Partner</h2>
+        <p class="mt-5 text-ink/70">DKE GLOBAL LOGISTICS is a trusted modern logistics and freight forwarding company serving clients worldwide from Lagos, Nigeria. We simplify global trade through air, sea, and land solutions backed by clear communication and careful execution.</p>
+        <p class="mt-4 text-ink/70">We do not just move cargo; we move opportunities, growth, and success for our clients.</p>
+        <div class="mt-8 space-y-4">
+          <div class="rounded-xl border border-silver/40 bg-offwhite p-5"><p class="font-bold text-navy">Beyond Borders</p><p class="mt-1 text-sm text-ink/70">Connecting businesses across continents with dependable global partners and networks.</p></div>
+          <div class="rounded-xl border border-silver/40 bg-offwhite p-5"><p class="font-bold text-navy">Beyond Stress</p><p class="mt-1 text-sm text-ink/70">Professional handling and hassle-free processes from planning to delivery.</p></div>
+          <div class="rounded-xl border border-silver/40 bg-offwhite p-5"><p class="font-bold text-navy">Integrity First</p><p class="mt-1 text-sm text-ink/70">Honesty, transparency, and ethical practices guide every operation.</p></div>
         </div>
-      </div>
-      <aside>
-        <p class="text-xs font-bold uppercase tracking-[0.25em] text-accent">Related Services</p>
-        <div class="mt-4 space-y-3" id="svc-related"></div>
-      </aside>
-    </div>
-  </section>
-
-  <!-- ================= INDUSTRIES ================= -->
-  <section data-page="industries">
-    <div class="bg-navy py-20 text-white">
-      <div class="mx-auto max-w-7xl px-4 md:px-8">
-        <p class="text-xs font-bold uppercase tracking-[0.25em] text-accent">Industries</p>
-        <h1 class="mt-3 text-4xl font-black md:text-5xl">Logistics for Businesses That Move Real Goods</h1>
-      </div>
-    </div>
-    <div class="bg-white py-20">
-      <div class="mx-auto max-w-7xl px-4 md:px-8">
-        <div class="grid gap-8 sm:grid-cols-2" id="industries-grid"></div>
+        <a href="#/about" class="btn-royal mt-8">Read Our Story</a>
       </div>
     </div>
   </section>
 
-  <!-- ================= REVIEWS PAGE ================= -->
-  <section data-page="reviews">
-    <div class="bg-navy py-20 text-white">
-      <div class="mx-auto max-w-7xl px-4 md:px-8">
-        <p class="text-xs font-bold uppercase tracking-[0.25em] text-accent">Customer Reviews</p>
-        <h1 class="mt-3 text-4xl font-black md:text-5xl">What Our Clients Say</h1>
-        <p class="mt-4 max-w-2xl text-silver">Real feedback from importers, exporters, and businesses who move cargo with DKE Global Logistics.</p>
-      </div>
-    </div>
-    <div class="bg-offwhite py-20">
-      <div class="mx-auto max-w-7xl px-4 md:px-8">
-        <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3" id="reviews-page-grid"></div>
+  <!-- MISSION / VISION / VALUES -->
+  <section class="bg-offwhite py-20">
+    <div class="mx-auto max-w-7xl px-4 md:px-8">
+      <p class="mx-auto max-w-2xl text-center text-ink/70">These principles guide how we serve clients, handle cargo, and build long-term logistics confidence.</p>
+      <div class="mt-12 grid gap-6 md:grid-cols-3">
+        <div class="rounded-2xl bg-white p-8 shadow-sm"><p class="text-xs font-bold uppercase tracking-[0.25em] text-accent">Our Mission</p><h3 class="mt-3 text-xl font-black text-navy">Deliver logistics solutions that simplify global trade.</h3><p class="mt-3 text-sm text-ink/70">To deliver efficient, reliable, and innovative logistics solutions that foster seamless connections between businesses and individuals worldwide.</p></div>
+        <div class="rounded-2xl bg-white p-8 shadow-sm"><p class="text-xs font-bold uppercase tracking-[0.25em] text-accent">Our Vision</p><h3 class="mt-3 text-xl font-black text-navy">Become a leading global logistics brand.</h3><p class="mt-3 text-sm text-ink/70">To redefine seamless and stress-free cross-border movement of goods through DKE's innovative solutions.</p></div>
+        <div class="rounded-2xl bg-navy p-8 text-white shadow-sm"><p class="text-xs font-bold uppercase tracking-[0.25em] text-accent">Core Values</p><h3 class="mt-3 text-xl font-black">Driven by integrity, powered by innovation.</h3><p class="mt-3 text-sm text-silver">Committed to excellence, focused on customers, growing through collaboration, sustaining the future, and guided by faith and purpose.</p></div>
       </div>
     </div>
   </section>
 
-  <!-- ================= BLOG INDEX ================= -->
-  <section data-page="blog">
-    <div class="bg-navy py-20 text-white">
-      <div class="mx-auto max-w-7xl px-4 md:px-8">
-        <p class="text-xs font-bold uppercase tracking-[0.25em] text-accent">Blog</p>
-        <h1 class="mt-3 text-4xl font-black md:text-5xl">Latest Blog Posts</h1>
-      </div>
-    </div>
-    <div class="bg-white py-20">
-      <div class="mx-auto max-w-7xl px-4 md:px-8">
-        <div class="grid gap-8 md:grid-cols-3" id="blog-grid"></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ================= BLOG ARTICLE ================= -->
-  <section data-page="article">
-    <div class="bg-navy py-16 text-white">
-      <div class="mx-auto max-w-3xl px-4 md:px-8">
-        <nav class="text-xs text-silver">
-          <a href="#/" class="hover:text-accent">Home</a> /
-          <a href="#/blog" class="hover:text-accent">Blog</a> /
-          <span class="text-accent" id="art-breadcrumb"></span>
-        </nav>
-        <p class="mt-4 text-xs font-bold uppercase tracking-[0.25em] text-accent" id="art-cat"></p>
-        <h1 class="mt-3 text-3xl font-black md:text-5xl" id="art-title"></h1>
-        <p class="mt-4 text-silver" id="art-summary"></p>
-      </div>
-    </div>
-    <article class="mx-auto max-w-3xl px-4 py-16 md:px-8">
-      <img id="art-image" src="" alt="" class="w-full rounded-2xl object-cover shadow-lg" loading="lazy" />
-      <div class="mt-8 text-ink/80">
-        <p id="art-body"></p>
-      </div>
-      <div class="mt-10 rounded-2xl border border-silver/40 bg-offwhite p-6">
-        <p class="font-bold text-navy">Have a shipment to discuss?</p>
-        <p class="mt-1 text-sm text-ink/70">Get a personalised quote from our logistics team.</p>
-        <a href="#/quote" class="btn-royal mt-4">Request a Quote</a>
-      </div>
-    </article>
-  </section>
-
-  <!-- ================= FAQ ================= -->
-  <section data-page="faq">
-    <div class="bg-navy py-20 text-white">
-      <div class="mx-auto max-w-7xl px-4 md:px-8">
-        <p class="text-xs font-bold uppercase tracking-[0.25em] text-accent">FAQ</p>
-        <h1 class="mt-3 text-4xl font-black md:text-5xl">Frequently Asked Questions</h1>
-      </div>
-    </div>
-    <div class="bg-white py-16">
-      <div class="mx-auto max-w-4xl px-4 md:px-8">
-        <div class="divide-y divide-silver/40 rounded-2xl border border-silver/40 bg-white px-4 shadow-sm" id="faq-list"></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ================= CONTACT ================= -->
-  <section data-page="contact">
-    <div class="bg-navy py-20 text-white">
-      <div class="mx-auto max-w-7xl px-4 md:px-8">
-        <p class="text-xs font-bold uppercase tracking-[0.25em] text-accent">Contact Us</p>
-        <h1 class="mt-3 text-4xl font-black md:text-5xl">Let's Move Your Cargo</h1>
-      </div>
-    </div>
-    <div class="mx-auto grid max-w-7xl gap-12 px-4 py-20 md:grid-cols-5 md:px-8">
+  <!-- FOUNDER -->
+  <section class="bg-white py-20">
+    <div class="mx-auto grid max-w-6xl gap-10 px-4 md:grid-cols-5 md:px-8">
       <div class="md:col-span-2">
-        <h2 class="text-2xl font-black text-navy">Get in Touch</h2>
-        <p class="mt-3 text-ink/70">We're ready to hear about your shipment.</p>
-        <div class="mt-6 space-y-4">
-          <div class="rounded-xl border border-silver/40 bg-white p-5">
-            <p class="text-xs font-bold uppercase tracking-widest text-accent">Address</p>
-            <p class="mt-2 text-sm text-ink/80">No. 4, Femi Fatoyinbo Street, Off Bishop Ademowo Crescent, Ago Palace, Lagos, Nigeria.</p>
-          </div>
-          <div class="rounded-xl border border-silver/40 bg-white p-5">
-            <p class="text-xs font-bold uppercase tracking-widest text-accent">Phone</p>
-            <p class="mt-2 text-sm"><a href="tel:+2349052221381" class="hover:text-royal">+234 905 222 1381</a></p>
-            <p class="text-sm"><a href="tel:+2347085108381" class="hover:text-royal">+234 708 510 8381</a></p>
-          </div>
-          <div class="rounded-xl border border-silver/40 bg-white p-5">
-            <p class="text-xs font-bold uppercase tracking-widest text-accent">Registration</p>
-            <p class="mt-2 text-sm text-ink/80">RC Number 8925507</p>
-          </div>
+        <div class="aspect-[4/5] overflow-hidden rounded-2xl bg-gradient-to-br from-navy to-royal text-white">
+          <div class="flex h-full items-center justify-center"><div class="text-center"><p class="text-6xl font-black text-accent">DKE</p><p class="mt-3 text-xs uppercase tracking-[0.25em] text-silver">Portrait Area</p></div></div>
         </div>
       </div>
       <div class="md:col-span-3">
-        <form id="contact-form" class="rounded-2xl border border-silver/40 bg-white p-6 shadow-sm md:p-8" novalidate>
-          <h2 class="text-2xl font-black text-navy">Send Us a Message</h2>
-          <div class="mt-6 space-y-4">
-            <div>
-              <label class="block text-sm font-semibold" for="c-name">Full Name *</label>
-              <input id="c-name" name="name" type="text" required class="mt-1 w-full rounded-lg border border-silver/60 px-4 py-2.5 focus:border-royal focus:outline-none focus:ring-2 focus:ring-royal/30" />
-              <p class="mt-1 text-xs text-red-600" data-error="c-name"></p>
-            </div>
-            <div class="grid gap-4 sm:grid-cols-2">
-              <div>
-                <label class="block text-sm font-semibold" for="c-email">Email Address *</label>
-                <input id="c-email" name="email" type="email" required class="mt-1 w-full rounded-lg border border-silver/60 px-4 py-2.5 focus:border-royal focus:outline-none focus:ring-2 focus:ring-royal/30" />
-                <p class="mt-1 text-xs text-red-600" data-error="c-email"></p>
-              </div>
-              <div>
-                <label class="block text-sm font-semibold" for="c-phone">Phone Number *</label>
-                <input id="c-phone" name="phone" type="tel" required class="mt-1 w-full rounded-lg border border-silver/60 px-4 py-2.5 focus:border-royal focus:outline-none focus:ring-2 focus:ring-royal/30" />
-                <p class="mt-1 text-xs text-red-600" data-error="c-phone"></p>
-              </div>
-            </div>
-            <div>
-              <label class="block text-sm font-semibold" for="c-subject">Subject *</label>
-              <input id="c-subject" name="subject" type="text" required class="mt-1 w-full rounded-lg border border-silver/60 px-4 py-2.5 focus:border-royal focus:outline-none focus:ring-2 focus:ring-royal/30" />
-              <p class="mt-1 text-xs text-red-600" data-error="c-subject"></p>
-            </div>
-            <div>
-              <label class="block text-sm font-semibold" for="c-message">Message *</label>
-              <textarea id="c-message" name="message" rows="4" required class="mt-1 w-full rounded-lg border border-silver/60 px-4 py-2.5 focus:border-royal focus:outline-none focus:ring-2 focus:ring-royal/30"></textarea>
-              <p class="mt-1 text-xs text-red-600" data-error="c-message"></p>
-            </div>
-            <input type="text" name="website" tabindex="-1" autocomplete="off" class="hidden" aria-hidden="true" />
-          </div>
-          <button type="submit" class="btn-royal mt-6">Submit Message</button>
-        </form>
+        <p class="text-xs font-bold uppercase tracking-[0.25em] text-accent">Founder / CEO</p>
+        <h2 class="mt-3 text-3xl font-black md:text-4xl">A Message from Our Founder</h2>
+        <blockquote class="mt-6 border-l-4 border-accent pl-6 text-lg leading-relaxed text-ink/80">“At DKE GLOBAL LOGISTICS, our mission is to make logistics feel clear, dependable, and stress-free for every client we serve. We understand that every shipment represents trust, opportunity, and business growth, so we handle each movement with care, integrity, and purpose.<br /><br />From Lagos to the world, we remain committed to helping businesses and individuals move beyond borders with confidence.”</blockquote>
+        <div class="mt-6"><p class="font-bold text-navy">Founder / CEO</p><p class="text-sm text-ink/60">DKE Global Logistics Limited</p></div>
       </div>
     </div>
   </section>
 
-  <!-- ================= QUOTE ================= -->
-  <section data-page="quote">
-    <div class="bg-navy py-20 text-white">
-      <div class="mx-auto max-w-7xl px-4 md:px-8">
-        <p class="text-xs font-bold uppercase tracking-[0.25em] text-accent">Request a Quote</p>
-        <h1 class="mt-3 text-4xl font-black md:text-5xl">Tell Us About Your Shipment</h1>
+  <!-- SPECIALIZED SUPPORT -->
+  <section class="bg-offwhite py-20">
+    <div class="mx-auto max-w-7xl px-4 md:px-8">
+      <div class="text-center"><h2 class="text-3xl font-black md:text-4xl">Logistics Details Handled with Expert Care</h2><p class="mx-auto mt-3 max-w-2xl text-ink/70">From regulated cargo to complex clearance and oversized movement, we support the work behind successful shipments.</p></div>
+      <div class="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+        <div class="card rounded-2xl bg-white p-6 shadow-sm"><h3 class="text-lg font-black text-navy">DG Packing &amp; Documentation</h3><p class="mt-2 text-sm text-ink/70">Compliant packaging and accurate documentation for hazardous cargo in line with international regulations.</p></div>
+        <div class="card rounded-2xl bg-white p-6 shadow-sm"><h3 class="text-lg font-black text-navy">Customs Clearance</h3><p class="mt-2 text-sm text-ink/70">Import and export clearance, duty assessment, HS code classification, permits, and transit customs handling.</p></div>
+        <div class="card rounded-2xl bg-white p-6 shadow-sm"><h3 class="text-lg font-black text-navy">Project Cargo</h3><p class="mt-2 text-sm text-ink/70">Tailored planning for oversized, high-value, and complex shipments, including surveys, charter support, tracking, and supervision.</p></div>
+        <div class="card rounded-2xl bg-white p-6 shadow-sm"><h3 class="text-lg font-black text-navy">Warehousing &amp; Distribution</h3><p class="mt-2 text-sm text-ink/70">Secure storage, consolidation, inventory organization, and dependable distribution with on-time delivery focus.</p></div>
       </div>
     </div>
-    <div class="mx-auto max-w-4xl px-4 py-16 md:px-8">
-      <form id="quote-form" class="rounded-2xl border border-silver/40 bg-white p-6 shadow-sm md:p-10" novalidate>
-        <div class="grid gap-4 md:grid-cols-2">
-          <div>
-            <label class="block text-sm font-semibold" for="q-name">Full Name *</label>
-            <input id="q-name" name="name" type="text" required class="mt-1 w-full rounded-lg border border-silver/60 px-4 py-2.5 focus:border-royal focus:outline-none focus:ring-2 focus:ring-royal/30" />
-            <p class="mt-1 text-xs text-red-600" data-error="q-name"></p>
+  </section>
+
+  <!-- COMPLETE SERVICES (filled by JS) -->
+  <section class="bg-white py-20">
+    <div class="mx-auto max-w-7xl px-4 md:px-8">
+      <div class="text-center"><h2 class="text-3xl font-black md:text-4xl">Complete Logistics Solutions</h2><p class="mx-auto mt-3 max-w-2xl text-ink/70">Every service now has its own detailed page with modern layouts, descriptions, and matching logistics images.</p></div>
+      <div class="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3" id="home-services-grid"></div>
+    </div>
+  </section>
+
+  <!-- WHY CHOOSE -->
+  <section class="bg-navy py-20 text-white">
+    <div class="mx-auto max-w-7xl px-4 md:px-8">
+      <div class="text-center"><h2 class="text-3xl font-black md:text-4xl">Built for Customers Who Need Clarity and Confidence</h2><p class="mx-auto mt-3 max-w-2xl text-silver">We combine customer focus, excellence, innovation, collaboration, and a global mindset to make cargo movement easier from start to finish.</p></div>
+      <div class="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+        <div class="rounded-2xl border border-white/10 bg-white/5 p-6"><h3 class="text-lg font-bold">Customer Focus</h3><p class="mt-2 text-sm text-silver">Services tailored to each client's needs with care and precision.</p></div>
+        <div class="rounded-2xl border border-white/10 bg-white/5 p-6"><h3 class="text-lg font-bold">Excellence</h3><p class="mt-2 text-sm text-silver">Operations designed to meet strong service and handling standards.</p></div>
+        <div class="rounded-2xl border border-white/10 bg-white/5 p-6"><h3 class="text-lg font-bold">Innovation</h3><p class="mt-2 text-sm text-silver">Modern tools and strategies that improve efficiency and visibility.</p></div>
+        <div class="rounded-2xl border border-white/10 bg-white/5 p-6"><h3 class="text-lg font-bold">Faith &amp; Purpose</h3><p class="mt-2 text-sm text-silver">Serving with humility, purpose, and a commitment to doing the work well.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- REVIEWS PREVIEW (6 of 10) -->
+  <section class="bg-offwhite py-20">
+    <div class="mx-auto max-w-7xl px-4 md:px-8">
+      <div class="text-center">
+        <p class="text-xs font-bold uppercase tracking-[0.3em] text-accent">Customer Reviews</p>
+        <h2 class="mt-3 text-3xl font-black md:text-4xl">Trusted by Importers, Exporters &amp; Growing Businesses</h2>
+        <p class="mx-auto mt-3 max-w-2xl text-ink/70">Real feedback from clients who move cargo with DKE Global Logistics.</p>
+      </div>
+      <div class="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3" id="reviews-preview-grid"></div>
+      <div class="mt-10 text-center"><a href="#/reviews" class="btn-royal">Read All Reviews</a></div>
+    </div>
+  </section>
+
+  <!-- INDUSTRIES -->
+  <section class="bg-white py-20">
+    <div class="mx-auto max-w-7xl px-4 md:px-8">
+      <div class="text-center"><h2 class="text-3xl font-black md:text-4xl">Logistics for Businesses That Move Real Goods</h2><p class="mx-auto mt-3 max-w-2xl text-ink/70">From importers to project contractors, we shape each logistics plan around the cargo, destination, timeline, and receiving conditions.</p></div>
+      <div class="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4" id="home-industries-grid"></div>
+    </div>
+  </section>
+
+  <!-- BLOG PREVIEW -->
+  <section class="bg-offwhite py-20">
+    <div class="mx-auto max-w-7xl px-4 md:px-8">
+      <div class="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
+        <div><h2 class="text-3xl font-black md:text-4xl">Latest Blog Posts</h2><p class="mt-3 max-w-xl text-ink/70">Helpful logistics notes for importers, exporters, and businesses planning cargo movement.</p></div>
+        <a href="#/blog" class="btn-royal text-sm">Visit Blog</a>
+      </div>
+      <div class="mt-10 grid gap-6 md:grid-cols-3" id="home-blog-grid"></div>
+    </div>
+  </section>
+
+  <!-- FINAL CTA -->
+  <section class="relative overflow-hidden bg-navy py-24 text-white">
+    <img src="https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?auto=format&fit=crop&w=1920&q=80" alt="Freight CTA (illustrative)" class="absolute inset-0 h-full w-full object-cover opacity-25" loading="lazy" />
+    <div class="relative mx-auto max-w-4xl px-4 text-center md:px-8">
+      <h2 class="text-3xl font-black md:text-5xl">Ready to Move Cargo with Confidence?</h2>
+      <p class="mx-auto mt-4 max-w-2xl text-silver">Tell us what you are shipping, where it is going, and when it needs to arrive.</p>
+      <a href="#/quote" class="btn-gold mt-8">Request a Quote</a>
+    </div>
+  </section>
+
+</div><!-- /home -->
+
+<!-- ============ ABOUT ============ -->
+<div class="page" data-page="about">
+  <div class="bg-navy py-20 text-white"><div class="mx-auto max-w-7xl px-4 md:px-8"><p class="text-xs font-bold uppercase tracking-[0.25em] text-accent">About Us</p><h1 class="mt-3 text-4xl font-black md:text-5xl">Nigeria's Trusted Freight and Logistics Partner</h1></div></div>
+  <div class="mx-auto grid max-w-7xl gap-12 px-4 py-20 md:grid-cols-2 md:px-8">
+    <img src="https://images.unsplash.com/photo-1578575437130-527eed3abbec?auto=format&fit=crop&w=1200&q=80" alt="Cargo vessel (illustrative)" class="w-full rounded-2xl object-cover shadow-lg" loading="lazy" />
+    <div>
+      <p class="text-xs font-bold uppercase tracking-[0.25em] text-accent">7+ Years of Excellence</p>
+      <h2 class="mt-3 text-3xl font-black md:text-4xl">Our Story</h2>
+      <p class="mt-5 text-ink/70">DKE GLOBAL LOGISTICS is a trusted modern logistics and freight forwarding company serving clients worldwide from Lagos, Nigeria. We simplify global trade through air, sea, and land solutions backed by clear communication and careful execution.</p>
+      <p class="mt-4 text-ink/70">We do not just move cargo; we move opportunities, growth, and success for our clients.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ============ SERVICES ============ -->
+<div class="page" data-page="services">
+  <div class="bg-navy py-20 text-white"><div class="mx-auto max-w-7xl px-4 md:px-8"><p class="text-xs font-bold uppercase tracking-[0.25em] text-accent">Services</p><h1 class="mt-3 text-4xl font-black md:text-5xl">Complete Logistics Solutions</h1></div></div>
+  <div class="bg-white py-20"><div class="mx-auto max-w-7xl px-4 md:px-8"><div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3" id="services-page-grid"></div></div></div>
+</div>
+
+<!-- ============ SERVICE DETAIL ============ -->
+<div class="page" data-page="service">
+  <div class="bg-navy py-16 text-white"><div class="mx-auto max-w-7xl px-4 md:px-8">
+    <nav class="text-xs text-silver"><a href="#/" class="hover:text-accent">Home</a> / <a href="#/services" class="hover:text-accent">Services</a> / <span class="text-accent" id="svc-breadcrumb"></span></nav>
+    <h1 class="mt-4 text-4xl font-black md:text-5xl" id="svc-title"></h1>
+  </div></div>
+  <div class="mx-auto grid max-w-7xl gap-12 px-4 py-20 md:grid-cols-3 md:px-8">
+    <div class="md:col-span-2">
+      <img id="svc-image" src="" alt="" class="w-full rounded-2xl object-cover shadow-lg" loading="lazy" />
+      <p id="svc-desc" class="mt-6 text-lg text-ink/80"></p>
+      <div class="mt-8 rounded-2xl border border-silver/40 bg-offwhite p-6"><p class="font-bold text-navy">Ready to discuss this service?</p><p class="mt-1 text-sm text-ink/70">Get a personalised quote from our team.</p><a href="#/quote" class="btn-royal mt-4">Request a Quote</a></div>
+    </div>
+    <aside>
+      <p class="text-xs font-bold uppercase tracking-[0.25em] text-accent">Related Services</p>
+      <div class="mt-4 space-y-3" id="svc-related"></div>
+    </aside>
+  </div>
+</div>
+
+<!-- ============ INDUSTRIES ============ -->
+<div class="page" data-page="industries">
+  <div class="bg-navy py-20 text-white"><div class="mx-auto max-w-7xl px-4 md:px-8"><p class="text-xs font-bold uppercase tracking-[0.25em] text-accent">Industries</p><h1 class="mt-3 text-4xl font-black md:text-5xl">Logistics for Businesses That Move Real Goods</h1></div></div>
+  <div class="bg-white py-20"><div class="mx-auto max-w-7xl px-4 md:px-8"><div class="grid gap-8 sm:grid-cols-2" id="industries-page-grid"></div></div></div>
+</div>
+
+<!-- ============ REVIEWS PAGE (all 10) ============ -->
+<div class="page" data-page="reviews">
+  <div class="bg-navy py-20 text-white"><div class="mx-auto max-w-7xl px-4 md:px-8"><p class="text-xs font-bold uppercase tracking-[0.25em] text-accent">Customer Reviews</p><h1 class="mt-3 text-4xl font-black md:text-5xl">What Our Clients Say</h1><p class="mt-4 max-w-2xl text-silver">Real feedback from importers, exporters, and businesses who move cargo with DKE Global Logistics.</p></div></div>
+  <div class="bg-offwhite py-20"><div class="mx-auto max-w-7xl px-4 md:px-8"><div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3" id="reviews-full-grid"></div></div></div>
+</div>
+
+<!-- ============ BLOG ============ -->
+<div class="page" data-page="blog">
+  <div class="bg-navy py-20 text-white"><div class="mx-auto max-w-7xl px-4 md:px-8"><p class="text-xs font-bold uppercase tracking-[0.25em] text-accent">Blog</p><h1 class="mt-3 text-4xl font-black md:text-5xl">Latest Blog Posts</h1></div></div>
+  <div class="bg-white py-20"><div class="mx-auto max-w-7xl px-4 md:px-8"><div class="grid gap-8 md:grid-cols-3" id="blog-page-grid"></div></div></div>
+</div>
+
+<!-- ============ ARTICLE ============ -->
+<div class="page" data-page="article">
+  <div class="bg-navy py-16 text-white"><div class="mx-auto max-w-3xl px-4 md:px-8">
+    <nav class="text-xs text-silver"><a href="#/" class="hover:text-accent">Home</a> / <a href="#/blog" class="hover:text-accent">Blog</a> / <span class="text-accent" id="art-breadcrumb"></span></nav>
+    <p class="mt-4 text-xs font-bold uppercase tracking-[0.25em] text-accent" id="art-cat"></p>
+    <h1 class="mt-3 text-3xl font-black md:text-5xl" id="art-title"></h1>
+    <p class="mt-4 text-silver" id="art-summary"></p>
+  </div></div>
+  <article class="mx-auto max-w-3xl px-4 py-16 md:px-8">
+    <img id="art-image" src="" alt="" class="w-full rounded-2xl object-cover shadow-lg" loading="lazy" />
+    <p id="art-body" class="mt-8 text-ink/80"></p>
+    <div class="mt-10 rounded-2xl border border-silver/40 bg-offwhite p-6"><p class="font-bold text-navy">Have a shipment to discuss?</p><a href="#/quote" class="btn-royal mt-4">Request a Quote</a></div>
+  </article>
+</div>
+
+<!-- ============ FAQ ============ -->
+<div class="page" data-page="faq">
+  <div class="bg-navy py-20 text-white"><div class="mx-auto max-w-7xl px-4 md:px-8"><p class="text-xs font-bold uppercase tracking-[0.25em] text-accent">FAQ</p><h1 class="mt-3 text-4xl font-black md:text-5xl">Frequently Asked Questions</h1></div></div>
+  <div class="bg-white py-16"><div class="mx-auto max-w-4xl px-4 md:px-8"><div class="divide-y divide-silver/40 rounded-2xl border border-silver/40 bg-white px-4 shadow-sm" id="faq-list"></div></div></div>
+</div>
+
+<!-- ============ CONTACT ============ -->
+<div class="page" data-page="contact">
+  <div class="bg-navy py-20 text-white"><div class="mx-auto max-w-7xl px-4 md:px-8"><p class="text-xs font-bold uppercase tracking-[0.25em] text-accent">Contact Us</p><h1 class="mt-3 text-4xl font-black md:text-5xl">Let's Move Your Cargo</h1></div></div>
+  <div class="mx-auto grid max-w-7xl gap-12 px-4 py-20 md:grid-cols-5 md:px-8">
+    <div class="md:col-span-2">
+      <h2 class="text-2xl font-black text-navy">Get in Touch</h2>
+      <p class="mt-3 text-ink/70">We're ready to hear about your shipment.</p>
+      <div class="mt-6 space-y-4">
+        <div class="rounded-xl border border-silver/40 bg-white p-5"><p class="text-xs font-bold uppercase tracking-widest text-accent">Address</p><p class="mt-2 text-sm text-ink/80">No. 4, Femi Fatoyinbo Street, Off Bishop Ademowo Crescent, Ago Palace, Lagos, Nigeria.</p></div>
+        <div class="rounded-xl border border-silver/40 bg-white p-5"><p class="text-xs font-bold uppercase tracking-widest text-accent">Phone</p><p class="mt-2 text-sm"><a href="tel:+2349052221381" class="hover:text-royal">+234 905 222 1381</a></p><p class="text-sm"><a href="tel:+2347085108381" class="hover:text-royal">+234 708 510 8381</a></p></div>
+        <div class="rounded-xl border border-silver/40 bg-white p-5"><p class="text-xs font-bold uppercase tracking-widest text-accent">Registration</p><p class="mt-2 text-sm text-ink/80">RC Number 8925507</p></div>
+      </div>
+    </div>
+    <div class="md:col-span-3">
+      <form id="contact-form" class="rounded-2xl border border-silver/40 bg-white p-6 shadow-sm md:p-8" novalidate>
+        <h2 class="text-2xl font-black text-navy">Send Us a Message</h2>
+        <div class="mt-6 space-y-4">
+          <div><label class="block text-sm font-semibold" for="c-name">Full Name *</label><input id="c-name" name="name" type="text" required class="mt-1 w-full rounded-lg border border-silver/60 px-4 py-2.5 focus:border-royal focus:outline-none focus:ring-2 focus:ring-royal/30" /><p class="mt-1 text-xs text-red-600" data-error="c-name"></p></div>
+          <div class="grid gap-4 sm:grid-cols-2">
+            <div><label class="block text-sm font-semibold" for="c-email">Email *</label><input id="c-email" name="email" type="email" required class="mt-1 w-full rounded-lg border border-silver/60 px-4 py-2.5 focus:border-royal focus:outline-none focus:ring-2 focus:ring-royal/30" /><p class="mt-1 text-xs text-red-600" data-error="c-email"></p></div>
+            <div><label class="block text-sm font-semibold" for="c-phone">Phone *</label><input id="c-phone" name="phone" type="tel" required class="mt-1 w-full rounded-lg border border-silver/60 px-4 py-2.5 focus:border-royal focus:outline-none focus:ring-2 focus:ring-royal/30" /><p class="mt-1 text-xs text-red-600" data-error="c-phone"></p></div>
           </div>
-          <div>
-            <label class="block text-sm font-semibold" for="q-company">Company Name (optional)</label>
-            <input id="q-company" name="company" type="text" class="mt-1 w-full rounded-lg border border-silver/60 px-4 py-2.5 focus:border-royal focus:outline-none focus:ring-2 focus:ring-royal/30" />
-          </div>
-          <div>
-            <label class="block text-sm font-semibold" for="q-email">Email Address *</label>
-            <input id="q-email" name="email" type="email" required class="mt-1 w-full rounded-lg border border-silver/60 px-4 py-2.5 focus:border-royal focus:outline-none focus:ring-2 focus:ring-royal/30" />
-            <p class="mt-1 text-xs text-red-600" data-error="q-email"></p>
-          </div>
-          <div>
-            <label class="block text-sm font-semibold" for="q-phone">Phone Number *</label>
-            <input id="q-phone" name="phone" type="tel" required class="mt-1 w-full rounded-lg border border-silver/60 px-4 py-2.5 focus:border-royal focus:outline-none focus:ring-2 focus:ring-royal/30" />
-            <p class="mt-1 text-xs text-red-600" data-error="q-phone"></p>
-          </div>
-          <div class="md:col-span-2">
-            <label class="block text-sm font-semibold" for="q-service">Freight Service Required *</label>
-            <select id="q-service" name="service" required class="mt-1 w-full rounded-lg border border-silver/60 px-4 py-2.5 focus:border-royal focus:outline-none focus:ring-2 focus:ring-royal/30">
-              <option value="">Select a service…</option>
-              <option>Air Freight</option>
-              <option>Sea Freight (FCL &amp; LCL)</option>
-              <option>Road Transport</option>
-              <option>Rail Transport</option>
-              <option>Door-to-Door</option>
-              <option>Customs Brokerage</option>
-              <option>Warehousing</option>
-              <option>Project Cargo</option>
-              <option>Supply Chain</option>
-            </select>
-            <p class="mt-1 text-xs text-red-600" data-error="q-service"></p>
-          </div>
-          <div>
-            <label class="block text-sm font-semibold" for="q-origin">Origin *</label>
-            <input id="q-origin" name="origin" type="text" required class="mt-1 w-full rounded-lg border border-silver/60 px-4 py-2.5 focus:border-royal focus:outline-none focus:ring-2 focus:ring-royal/30" />
-            <p class="mt-1 text-xs text-red-600" data-error="q-origin"></p>
-          </div>
-          <div>
-            <label class="block text-sm font-semibold" for="q-destination">Destination *</label>
-            <input id="q-destination" name="destination" type="text" required class="mt-1 w-full rounded-lg border border-silver/60 px-4 py-2.5 focus:border-royal focus:outline-none focus:ring-2 focus:ring-royal/30" />
-            <p class="mt-1 text-xs text-red-600" data-error="q-destination"></p>
-          </div>
-          <div class="md:col-span-2">
-            <label class="block text-sm font-semibold" for="q-cargo">Cargo Description *</label>
-            <textarea id="q-cargo" name="cargo" rows="3" required class="mt-1 w-full rounded-lg border border-silver/60 px-4 py-2.5 focus:border-royal focus:outline-none focus:ring-2 focus:ring-royal/30"></textarea>
-            <p class="mt-1 text-xs text-red-600" data-error="q-cargo"></p>
-          </div>
-          <div>
-            <label class="block text-sm font-semibold" for="q-weight">Estimated Cargo Weight or Volume (optional)</label>
-            <input id="q-weight" name="weight" type="text" class="mt-1 w-full rounded-lg border border-silver/60 px-4 py-2.5 focus:border-royal focus:outline-none focus:ring-2 focus:ring-royal/30" />
-          </div>
-          <div>
-            <label class="block text-sm font-semibold" for="q-date">Preferred Shipping Date (optional)</label>
-            <input id="q-date" name="date" type="date" class="mt-1 w-full rounded-lg border border-silver/60 px-4 py-2.5 focus:border-royal focus:outline-none focus:ring-2 focus:ring-royal/30" />
-          </div>
-          <div class="md:col-span-2">
-            <label class="block text-sm font-semibold" for="q-notes">Additional Information</label>
-            <textarea id="q-notes" name="notes" rows="3" class="mt-1 w-full rounded-lg border border-silver/60 px-4 py-2.5 focus:border-royal focus:outline-none focus:ring-2 focus:ring-royal/30"></textarea>
-          </div>
+          <div><label class="block text-sm font-semibold" for="c-subject">Subject *</label><input id="c-subject" name="subject" type="text" required class="mt-1 w-full rounded-lg border border-silver/60 px-4 py-2.5 focus:border-royal focus:outline-none focus:ring-2 focus:ring-royal/30" /><p class="mt-1 text-xs text-red-600" data-error="c-subject"></p></div>
+          <div><label class="block text-sm font-semibold" for="c-message">Message *</label><textarea id="c-message" name="message" rows="4" required class="mt-1 w-full rounded-lg border border-silver/60 px-4 py-2.5 focus:border-royal focus:outline-none focus:ring-2 focus:ring-royal/30"></textarea><p class="mt-1 text-xs text-red-600" data-error="c-message"></p></div>
         </div>
-        <button type="submit" class="btn-royal mt-6">Request a Quote</button>
+        <button type="submit" class="btn-royal mt-6">Submit Message</button>
       </form>
     </div>
-  </section>
+  </div>
+</div>
 
-  <!-- ================= 404 ================= -->
-  <section data-page="404">
-    <div class="mx-auto max-w-3xl px-4 py-24 text-center md:px-8">
-      <p class="text-7xl font-black text-royal">404</p>
-      <h1 class="mt-4 text-3xl font-black">Page Not Found</h1>
-      <p class="mt-3 text-ink/70">The page you're looking for doesn't exist or has moved.</p>
-      <a href="#/" class="btn-royal mt-6">Back to Home</a>
-    </div>
-  </section>
+<!-- ============ QUOTE ============ -->
+<div class="page" data-page="quote">
+  <div class="bg-navy py-20 text-white"><div class="mx-auto max-w-7xl px-4 md:px-8"><p class="text-xs font-bold uppercase tracking-[0.25em] text-accent">Request a Quote</p><h1 class="mt-3 text-4xl font-black md:text-5xl">Tell Us About Your Shipment</h1></div></div>
+  <div class="mx-auto max-w-4xl px-4 py-16 md:px-8">
+    <form id="quote-form" class="rounded-2xl border border-silver/40 bg-white p-6 shadow-sm md:p-10" novalidate>
+      <div class="grid gap-4 md:grid-cols-2">
+        <div><label class="block text-sm font-semibold" for="q-name">Full Name *</label><input id="q-name" name="name" type="text" required class="mt-1 w-full rounded-lg border border-silver/60 px-4 py-2.5 focus:border-royal focus:outline-none focus:ring-2 focus:ring-royal/30" /><p class="mt-1 text-xs text-red-600" data-error="q-name"></p></div>
+        <div><label class="block text-sm font-semibold" for="q-company">Company Name (optional)</label><input id="q-company" name="company" type="text" class="mt-1 w-full rounded-lg border border-silver/60 px-4 py-2.5 focus:border-royal focus:outline-none focus:ring-2 focus:ring-royal/30" /></div>
+        <div><label class="block text-sm font-semibold" for="q-email">Email *</label><input id="q-email" name="email" type="email" required class="mt-1 w-full rounded-lg border border-silver/60 px-4 py-2.5 focus:border-royal focus:outline-none focus:ring-2 focus:ring-royal/30" /><p class="mt-1 text-xs text-red-600" data-error="q-email"></p></div>
+        <div><label class="block text-sm font-semibold" for="q-phone">Phone *</label><input id="q-phone" name="phone" type="tel" required class="mt-1 w-full rounded-lg border border-silver/60 px-4 py-2.5 focus:border-royal focus:outline-none focus:ring-2 focus:ring-royal/30" /><p class="mt-1 text-xs text-red-600" data-error="q-phone"></p></div>
+        <div class="md:col-span-2"><label class="block text-sm font-semibold" for="q-service">Freight Service Required *</label><select id="q-service" name="service" required class="mt-1 w-full rounded-lg border border-silver/60 px-4 py-2.5 focus:border-royal focus:outline-none focus:ring-2 focus:ring-royal/30"><option value="">Select a service…</option><option>Air Freight</option><option>Sea Freight (FCL &amp; LCL)</option><option>Road Transport</option><option>Rail Transport</option><option>Door-to-Door</option><option>Customs Brokerage</option><option>Warehousing</option><option>Project Cargo</option><option>Supply Chain</option></select><p class="mt-1 text-xs text-red-600" data-error="q-service"></p></div>
+        <div><label class="block text-sm font-semibold" for="q-origin">Origin *</label><input id="q-origin" name="origin" type="text" required class="mt-1 w-full rounded-lg border border-silver/60 px-4 py-2.5 focus:border-royal focus:outline-none focus:ring-2 focus:ring-royal/30" /><p class="mt-1 text-xs text-red-600" data-error="q-origin"></p></div>
+        <div><label class="block text-sm font-semibold" for="q-destination">Destination *</label><input id="q-destination" name="destination" type="text" required class="mt-1 w-full rounded-lg border border-silver/60 px-4 py-2.5 focus:border-royal focus:outline-none focus:ring-2 focus:ring-royal/30" /><p class="mt-1 text-xs text-red-600" data-error="q-destination"></p></div>
+        <div class="md:col-span-2"><label class="block text-sm font-semibold" for="q-cargo">Cargo Description *</label><textarea id="q-cargo" name="cargo" rows="3" required class="mt-1 w-full rounded-lg border border-silver/60 px-4 py-2.5 focus:border-royal focus:outline-none focus:ring-2 focus:ring-royal/30"></textarea><p class="mt-1 text-xs text-red-600" data-error="q-cargo"></p></div>
+        <div><label class="block text-sm font-semibold" for="q-weight">Weight/Volume (optional)</label><input id="q-weight" name="weight" type="text" class="mt-1 w-full rounded-lg border border-silver/60 px-4 py-2.5 focus:border-royal focus:outline-none focus:ring-2 focus:ring-royal/30" /></div>
+        <div><label class="block text-sm font-semibold" for="q-date">Preferred Shipping Date (optional)</label><input id="q-date" name="date" type="date" class="mt-1 w-full rounded-lg border border-silver/60 px-4 py-2.5 focus:border-royal focus:outline-none focus:ring-2 focus:ring-royal/30" /></div>
+        <div class="md:col-span-2"><label class="block text-sm font-semibold" for="q-notes">Additional Information</label><textarea id="q-notes" name="notes" rows="3" class="mt-1 w-full rounded-lg border border-silver/60 px-4 py-2.5 focus:border-royal focus:outline-none focus:ring-2 focus:ring-royal/30"></textarea></div>
+      </div>
+      <button type="submit" class="btn-royal mt-6">Request a Quote</button>
+    </form>
+  </div>
+</div>
+
+<!-- ============ 404 ============ -->
+<div class="page" data-page="404">
+  <div class="mx-auto max-w-3xl px-4 py-24 text-center md:px-8">
+    <p class="text-7xl font-black text-royal">404</p>
+    <h1 class="mt-4 text-3xl font-black">Page Not Found</h1>
+    <p class="mt-3 text-ink/70">The page you're looking for doesn't exist or has moved.</p>
+    <a href="#/" class="btn-royal mt-6">Back to Home</a>
+  </div>
+</div>
 
 </main>
 
-<!-- ===== FOOTER ===== -->
+<!-- ============ FOOTER ============ -->
 <footer class="bg-navy text-silver">
   <div class="mx-auto grid max-w-7xl gap-10 px-4 py-16 md:grid-cols-4 md:px-8">
     <div class="md:col-span-2">
-      <a href="#/" class="flex items-center gap-2.5">
-        <span class="flex h-10 w-10 items-center justify-center rounded-lg bg-royal font-black text-white">D</span>
-        <span class="text-base font-black text-white">DKE <span class="text-accent">GLOBAL</span></span>
-      </a>
+      <a href="#/" class="flex items-center gap-2.5"><span class="flex h-10 w-10 items-center justify-center rounded-lg bg-royal font-black text-white">D</span><span class="text-base font-black text-white">DKE <span class="text-accent">GLOBAL</span></span></a>
       <h3 class="mt-4 text-lg font-bold text-white">DKE Global Logistics Limited</h3>
       <p class="mt-3 max-w-md text-sm">Your trusted partner for freight forwarding, supply chain, and global logistics solutions connecting Nigeria to the world.</p>
     </div>
@@ -845,154 +473,114 @@
   </div>
 </footer>
 
-<div id="toast" class="toast" role="status" aria-live="polite"></div>
+<div id="toast" class="toast"></div>
 
 <script>
-/* ============================================================
-   DATA
-   ============================================================ */
+/* ---------- DATA ---------- */
 const SERVICES = [
-  { slug: 'air-freight', title: 'Air Freight', desc: 'Priority cargo movement through major airline and charter networks.', image: 'https://images.unsplash.com/photo-1436491865332-7a61a109cc05?auto=format&fit=crop&w=1200&q=80' },
-  { slug: 'sea-freight', title: 'Sea Freight (FCL & LCL)', desc: 'Ocean freight for full container loads and shared container shipments.', image: 'https://images.unsplash.com/photo-1578575437130-527eed3abbec?auto=format&fit=crop&w=1200&q=80' },
-  { slug: 'road-transport', title: 'Road Transport', desc: 'Domestic and cross-border trucking for commercial cargo.', image: 'https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?auto=format&fit=crop&w=1200&q=80' },
-  { slug: 'rail-transport', title: 'Rail Transport', desc: 'Cost-efficient bulk movement for heavy and high-volume freight.', image: 'https://images.unsplash.com/photo-1474487548417-781cb71495f3?auto=format&fit=crop&w=1200&q=80' },
-  { slug: 'door-to-door', title: 'Door-to-Door', desc: 'Pickup, forwarding, clearance, and final delivery in one workflow.', image: 'https://images.unsplash.com/photo-1566576912321-d58ddd7a6088?auto=format&fit=crop&w=1200&q=80' },
-  { slug: 'customs-brokerage', title: 'Customs Brokerage', desc: 'Documentation, classification, compliance, and port clearance.', image: 'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=1200&q=80' },
-  { slug: 'warehousing', title: 'Warehousing', desc: 'Secure storage, inventory control, consolidation, and distribution.', image: 'https://images.unsplash.com/photo-1553413077-190dd305871c?auto=format&fit=crop&w=1200&q=80' },
-  { slug: 'project-cargo', title: 'Project Cargo', desc: 'Special handling for oversized, industrial, and complex shipments.', image: 'https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=1200&q=80' },
-  { slug: 'supply-chain', title: 'Supply Chain', desc: 'End-to-end planning from procurement logistics to final delivery.', image: 'https://images.unsplash.com/photo-1494412574643-ff11b0a5c1c3?auto=format&fit=crop&w=1200&q=80' },
+  { slug:'air-freight', title:'Air Freight', desc:'Priority cargo movement through major airline and charter networks.', image:'https://images.unsplash.com/photo-1436491865332-7a61a109cc05?auto=format&fit=crop&w=1200&q=80' },
+  { slug:'sea-freight', title:'Sea Freight (FCL & LCL)', desc:'Ocean freight for full container loads and shared container shipments.', image:'https://images.unsplash.com/photo-1578575437130-527eed3abbec?auto=format&fit=crop&w=1200&q=80' },
+  { slug:'road-transport', title:'Road Transport', desc:'Domestic and cross-border trucking for commercial cargo.', image:'https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?auto=format&fit=crop&w=1200&q=80' },
+  { slug:'rail-transport', title:'Rail Transport', desc:'Cost-efficient bulk movement for heavy and high-volume freight.', image:'https://images.unsplash.com/photo-1474487548417-781cb71495f3?auto=format&fit=crop&w=1200&q=80' },
+  { slug:'door-to-door', title:'Door-to-Door', desc:'Pickup, forwarding, clearance, and final delivery in one workflow.', image:'https://images.unsplash.com/photo-1566576912321-d58ddd7a6088?auto=format&fit=crop&w=1200&q=80' },
+  { slug:'customs-brokerage', title:'Customs Brokerage', desc:'Documentation, classification, compliance, and port clearance.', image:'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=1200&q=80' },
+  { slug:'warehousing', title:'Warehousing', desc:'Secure storage, inventory control, consolidation, and distribution.', image:'https://images.unsplash.com/photo-1553413077-190dd305871c?auto=format&fit=crop&w=1200&q=80' },
+  { slug:'project-cargo', title:'Project Cargo', desc:'Special handling for oversized, industrial, and complex shipments.', image:'https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=1200&q=80' },
+  { slug:'supply-chain', title:'Supply Chain', desc:'End-to-end planning from procurement logistics to final delivery.', image:'https://images.unsplash.com/photo-1494412574643-ff11b0a5c1c3?auto=format&fit=crop&w=1200&q=80' },
 ];
-
 const POSTS = [
-  { slug: 'documents-to-prepare', cat: 'Customs', title: 'Documents to Prepare Before Your Cargo Arrives', summary: 'A practical checklist to reduce avoidable clearance delays and keep import plans moving.', image: 'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=1200&q=80', body: 'A practical checklist to reduce avoidable clearance delays and keep import plans moving. Contact DKE Global Logistics for specific documentation guidance related to your shipment.' },
-  { slug: 'fcl-vs-lcl', cat: 'Sea Freight', title: 'FCL vs LCL: Choosing the Right Ocean Freight Option', summary: 'When to book a full container and when shared container shipping makes better business sense.', image: 'https://images.unsplash.com/photo-1578575437130-527eed3abbec?auto=format&fit=crop&w=1200&q=80', body: 'When to book a full container and when shared container shipping makes better business sense. Contact DKE Global Logistics to discuss which option fits your cargo.' },
-  { slug: 'when-air-freight', cat: 'Air Freight', title: 'When Air Freight Is Worth the Extra Cost', summary: 'How urgency, cargo value, stockouts, and customer deadlines affect freight decisions.', image: 'https://images.unsplash.com/photo-1436491865332-7a61a109cc05?auto=format&fit=crop&w=1200&q=80', body: 'How urgency, cargo value, stockouts, and customer deadlines affect freight decisions. Contact DKE Global Logistics to review the best option for your shipment.' },
+  { slug:'documents-to-prepare', cat:'Customs', title:'Documents to Prepare Before Your Cargo Arrives', summary:'A practical checklist to reduce avoidable clearance delays and keep import plans moving.', image:'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=1200&q=80', body:'A practical checklist to reduce avoidable clearance delays and keep import plans moving. Contact DKE Global Logistics for specific documentation guidance related to your shipment.' },
+  { slug:'fcl-vs-lcl', cat:'Sea Freight', title:'FCL vs LCL: Choosing the Right Ocean Freight Option', summary:'When to book a full container and when shared container shipping makes better business sense.', image:'https://images.unsplash.com/photo-1578575437130-527eed3abbec?auto=format&fit=crop&w=1200&q=80', body:'When to book a full container and when shared container shipping makes better business sense. Contact DKE Global Logistics to discuss which option fits your cargo.' },
+  { slug:'when-air-freight', cat:'Air Freight', title:'When Air Freight Is Worth the Extra Cost', summary:'How urgency, cargo value, stockouts, and customer deadlines affect freight decisions.', image:'https://images.unsplash.com/photo-1436491865332-7a61a109cc05?auto=format&fit=crop&w=1200&q=80', body:'How urgency, cargo value, stockouts, and customer deadlines affect freight decisions. Contact DKE Global Logistics to review the best option for your shipment.' },
 ];
-
 const INDUSTRIES = [
-  { title: 'Retail & E-commerce', desc: 'Imports, stock replenishment, warehousing, and distribution for fast-moving consumer goods.', image: 'https://images.unsplash.com/photo-1553413077-190dd305871c?auto=format&fit=crop&w=1000&q=80' },
-  { title: 'Technology & Electronics', desc: 'Careful handling for high-value devices, parts, equipment, and time-sensitive replacement cargo.', image: 'https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1000&q=80' },
-  { title: 'Manufacturing', desc: 'Inbound raw materials, machinery, spare parts, and outbound goods for production teams.', image: 'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=1000&q=80' },
-  { title: 'Construction & Energy', desc: 'Heavy equipment, project cargo, site deliveries, and coordinated movement for complex projects.', image: 'https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=1000&q=80' },
+  { title:'Retail & E-commerce', desc:'Imports, stock replenishment, warehousing, and distribution for fast-moving consumer goods.', image:'https://images.unsplash.com/photo-1553413077-190dd305871c?auto=format&fit=crop&w=1000&q=80' },
+  { title:'Technology & Electronics', desc:'Careful handling for high-value devices, parts, equipment, and time-sensitive replacement cargo.', image:'https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1000&q=80' },
+  { title:'Manufacturing', desc:'Inbound raw materials, machinery, spare parts, and outbound goods for production teams.', image:'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=1000&q=80' },
+  { title:'Construction & Energy', desc:'Heavy equipment, project cargo, site deliveries, and coordinated movement for complex projects.', image:'https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=1000&q=80' },
 ];
-
-/* ============================================================
-   10 CUSTOMER REVIEWS
-   ============================================================ */
 const REVIEWS = [
-  { name: 'Chinedu Okafor', role: 'Importer · Lagos', rating: 5, quote: 'DKE handled our container clearance faster than we expected. Clear communication from start to finish, and the team was always reachable on WhatsApp.' },
-  { name: 'Amina Bello', role: 'E-commerce Founder', rating: 5, quote: 'We restock monthly from China and DKE has become our go-to partner. Cargo arrives organised, documented, and on schedule.' },
-  { name: 'Tunde Adeyemi', role: 'Manufacturing Manager', rating: 5, quote: 'Their team coordinated inbound machinery for our factory with careful handling and honest updates. Very professional outfit.' },
-  { name: 'Ngozi Eze', role: 'Retail Buyer', rating: 5, quote: 'From warehousing to final distribution, everything was seamless. DKE\'s documentation was clean and customs clearance was smooth.' },
-  { name: 'Samuel Ogunleye', role: 'Project Contractor', rating: 5, quote: 'We moved oversized equipment for a site in Abuja. DKE planned the entire movement carefully and kept us updated at every stage.' },
-  { name: 'Fatima Yusuf', role: 'Electronics Distributor', rating: 5, quote: 'High-value cargo needs careful hands, and DKE delivered. Packaging, tracking, and follow-up were all on point.' },
-  { name: 'Emeka Nwosu', role: 'Export Business Owner', rating: 5, quote: 'Their air freight service got our urgent shipment out on time. No surprises on cost, and every step was clearly explained.' },
-  { name: 'Blessing Okonkwo', role: 'E-commerce Seller', rating: 5, quote: 'The team is easy to reach and treats small shipments with the same care as large ones. Honest pricing and dependable service.' },
-  { name: 'Ibrahim Lawal', role: 'Construction Supplier', rating: 5, quote: 'DKE coordinated multiple deliveries to our sites without a single missed window. Professional and reliable.' },
-  { name: 'Adaeze Nnamdi', role: 'Supply Chain Officer', rating: 5, quote: 'Clear communication, careful execution, and a team that actually picks up the phone. That is what DKE gives you.' },
+  { name:'Chinedu Okafor', role:'Importer · Lagos', rating:5, quote:'DKE handled our container clearance faster than we expected. Clear communication from start to finish.' },
+  { name:'Amina Bello', role:'E-commerce Founder', rating:5, quote:'We restock monthly from China and DKE has become our go-to partner. Cargo arrives organised and on schedule.' },
+  { name:'Tunde Adeyemi', role:'Manufacturing Manager', rating:5, quote:'Their team coordinated inbound machinery for our factory with careful handling and honest updates.' },
+  { name:'Ngozi Eze', role:'Retail Buyer', rating:5, quote:'From warehousing to final distribution, everything was seamless. Documentation was clean and clearance was smooth.' },
+  { name:'Samuel Ogunleye', role:'Project Contractor', rating:5, quote:'We moved oversized equipment for a site in Abuja. DKE planned the entire movement carefully and kept us updated.' },
+  { name:'Fatima Yusuf', role:'Electronics Distributor', rating:5, quote:'High-value cargo needs careful hands, and DKE delivered. Packaging, tracking, and follow-up were on point.' },
+  { name:'Emeka Nwosu', role:'Export Business Owner', rating:5, quote:'Their air freight service got our urgent shipment out on time. No surprises on cost, every step explained.' },
+  { name:'Blessing Okonkwo', role:'E-commerce Seller', rating:5, quote:'The team is easy to reach and treats small shipments with the same care as large ones. Honest pricing.' },
+  { name:'Ibrahim Lawal', role:'Construction Supplier', rating:5, quote:'DKE coordinated multiple deliveries to our sites without a single missed window. Professional and reliable.' },
+  { name:'Adaeze Nnamdi', role:'Supply Chain Officer', rating:5, quote:'Clear communication, careful execution, and a team that actually picks up the phone. That is what DKE gives you.' },
 ];
-
 const FAQS = [
-  { q: 'What freight services does DKE Global Logistics offer?', a: 'DKE Global Logistics offers Air Freight, Sea Freight (FCL & LCL), Road Transport, Rail Transport, Door-to-Door, Customs Brokerage, Warehousing, Project Cargo, and Supply Chain services.' },
-  { q: 'Where is DKE Global Logistics located?', a: 'No. 4, Femi Fatoyinbo Street, Off Bishop Ademowo Crescent, Ago Palace, Lagos, Nigeria.' },
-  { q: 'How can I contact DKE Global Logistics?', a: 'Call +234 905 222 1381 or +234 708 510 8381, or use the contact form on this website.' },
-  { q: 'What is the company registration number?', a: 'RC Number 8925507.' },
-  { q: 'What is your mission?', a: 'To deliver efficient, reliable, and innovative logistics solutions that foster seamless connections between businesses and individuals worldwide.' },
-  { q: 'What is your vision?', a: 'To redefine seamless and stress-free cross-border movement of goods through DKE\u2019s innovative solutions.' },
-  { q: 'Do you handle hazardous cargo?', a: 'Please contact DKE Global Logistics directly to discuss DG packing and documentation requirements for your specific shipment.' },
-  { q: 'Can I get a quote?', a: 'Yes. Use the Request a Quote page to share your shipment details and our team will follow up.' },
+  { q:'What freight services does DKE Global Logistics offer?', a:'DKE Global Logistics offers Air Freight, Sea Freight (FCL & LCL), Road Transport, Rail Transport, Door-to-Door, Customs Brokerage, Warehousing, Project Cargo, and Supply Chain services.' },
+  { q:'Where is DKE Global Logistics located?', a:'No. 4, Femi Fatoyinbo Street, Off Bishop Ademowo Crescent, Ago Palace, Lagos, Nigeria.' },
+  { q:'How can I contact DKE Global Logistics?', a:'Call +234 905 222 1381 or +234 708 510 8381, or use the contact form on this website.' },
+  { q:'What is the company registration number?', a:'RC Number 8925507.' },
+  { q:'What is your mission?', a:'To deliver efficient, reliable, and innovative logistics solutions that foster seamless connections between businesses and individuals worldwide.' },
+  { q:'What is your vision?', a:'To redefine seamless and stress-free cross-border movement of goods through DKE\u2019s innovative solutions.' },
+  { q:'Do you handle hazardous cargo?', a:'Please contact DKE Global Logistics directly to discuss DG packing and documentation requirements for your specific shipment.' },
+  { q:'Can I get a quote?', a:'Yes. Use the Request a Quote page to share your shipment details and our team will follow up.' },
 ];
 
-/* ============================================================
-   HELPERS — cards
-   ============================================================ */
-function serviceCard(s) {
-  return `
-    <article class="reveal card overflow-hidden rounded-2xl bg-white shadow-sm">
-      <img src="${s.image}" alt="${s.title} (illustrative)" class="h-44 w-full object-cover" loading="lazy" />
-      <div class="p-6">
-        <h3 class="text-lg font-black text-navy">${s.title}</h3>
-        <p class="mt-2 text-sm text-ink/70">${s.desc}</p>
-        <a href="#/service/${s.slug}" class="btn-royal mt-4 !py-2 text-xs">Explore Service</a>
-      </div>
-    </article>`;
-}
-function postCard(p) {
-  return `
-    <article class="reveal card overflow-hidden rounded-2xl bg-white shadow-sm">
-      <img src="${p.image}" alt="${p.title} (illustrative)" class="h-44 w-full object-cover" loading="lazy" />
-      <div class="p-6">
-        <p class="text-xs font-bold uppercase tracking-widest text-accent">${p.cat}</p>
-        <h3 class="mt-2 text-lg font-black text-navy">${p.title}</h3>
-        <p class="mt-2 text-sm text-ink/70">${p.summary}</p>
-        <a href="#/article/${p.slug}" class="mt-4 inline-block text-sm font-bold text-royal hover:text-royalDark">Read Post →</a>
-      </div>
-    </article>`;
-}
-function industryCard(i) {
-  return `
-    <article class="reveal card overflow-hidden rounded-2xl bg-white shadow-sm">
-      <img src="${i.image}" alt="${i.title} (illustrative)" class="h-56 w-full object-cover" loading="lazy" />
-      <div class="p-6">
-        <h3 class="text-2xl font-black text-navy">${i.title}</h3>
-        <p class="mt-3 text-ink/70">${i.desc}</p>
-      </div>
-    </article>`;
-}
+/* ---------- CARD BUILDERS ---------- */
+const serviceCard = s => `
+  <article class="card overflow-hidden rounded-2xl bg-white shadow-sm">
+    <img src="${s.image}" alt="${s.title} (illustrative)" class="h-44 w-full object-cover" loading="lazy" />
+    <div class="p-6">
+      <h3 class="text-lg font-black text-navy">${s.title}</h3>
+      <p class="mt-2 text-sm text-ink/70">${s.desc}</p>
+      <a href="#/service/${s.slug}" class="btn-royal mt-4 !py-2 text-xs">Explore Service</a>
+    </div>
+  </article>`;
+const postCard = p => `
+  <article class="card overflow-hidden rounded-2xl bg-white shadow-sm">
+    <img src="${p.image}" alt="${p.title} (illustrative)" class="h-44 w-full object-cover" loading="lazy" />
+    <div class="p-6">
+      <p class="text-xs font-bold uppercase tracking-widest text-accent">${p.cat}</p>
+      <h3 class="mt-2 text-lg font-black text-navy">${p.title}</h3>
+      <p class="mt-2 text-sm text-ink/70">${p.summary}</p>
+      <a href="#/article/${p.slug}" class="mt-4 inline-block text-sm font-bold text-royal">Read Post →</a>
+    </div>
+  </article>`;
+const industryCard = i => `
+  <article class="card overflow-hidden rounded-2xl bg-white shadow-sm">
+    <img src="${i.image}" alt="${i.title} (illustrative)" class="h-56 w-full object-cover" loading="lazy" />
+    <div class="p-6"><h3 class="text-2xl font-black text-navy">${i.title}</h3><p class="mt-3 text-ink/70">${i.desc}</p></div>
+  </article>`;
+const initials = n => n.split(' ').map(w => w[0]).slice(0,2).join('').toUpperCase();
+const reviewCard = r => `
+  <div class="review-card card rounded-2xl bg-white p-6 shadow-sm">
+    <div class="flex items-center gap-3">
+      <div class="flex h-12 w-12 items-center justify-center rounded-full bg-royal text-white font-black">${initials(r.name)}</div>
+      <div><p class="font-bold text-navy">${r.name}</p><p class="text-xs text-ink/60">${r.role}</p></div>
+    </div>
+    <p class="stars mt-4">${'★'.repeat(r.rating)}${'☆'.repeat(5 - r.rating)}</p>
+    <p class="mt-3 text-sm leading-relaxed text-ink/80">“${r.quote}”</p>
+  </div>`;
 
-/* Initials helper */
-function initials(name) {
-  return name.split(' ').map(w => w[0]).slice(0, 2).join('').toUpperCase();
-}
-
-/* Review card */
-function reviewCard(r, idx) {
-  const stars = '★'.repeat(r.rating) + '☆'.repeat(5 - r.rating);
-  return `
-    <div class="review-card card rounded-2xl bg-white p-6 shadow-sm" style="transition-delay:${(idx % 10) * 60}ms">
-      <div class="flex items-center gap-3">
-        <div class="flex h-12 w-12 items-center justify-center rounded-full bg-royal text-white font-black">${initials(r.name)}</div>
-        <div>
-          <p class="font-bold text-navy">${r.name}</p>
-          <p class="text-xs text-ink/60">${r.role}</p>
-        </div>
-      </div>
-      <p class="stars mt-4">${stars}</p>
-      <p class="mt-3 text-sm leading-relaxed text-ink/80">“${r.quote}”</p>
-    </div>`;
-}
-
-/* Populate */
-document.getElementById('services-grid').innerHTML = SERVICES.map(serviceCard).join('');
+/* ---------- FILL STATIC GRIDS ONCE ---------- */
 document.getElementById('home-services-grid').innerHTML = SERVICES.map(serviceCard).join('');
-document.getElementById('blog-grid').innerHTML = POSTS.map(postCard).join('');
+document.getElementById('services-page-grid').innerHTML = SERVICES.map(serviceCard).join('');
+document.getElementById('home-industries-grid').innerHTML = INDUSTRIES.map(industryCard).join('');
+document.getElementById('industries-page-grid').innerHTML = INDUSTRIES.map(industryCard).join('');
 document.getElementById('home-blog-grid').innerHTML = POSTS.map(postCard).join('');
-document.getElementById('industries-grid').innerHTML = INDUSTRIES.map(industryCard).join('');
-
-/* Reviews: 10 on homepage preview (show first 6) + full 10 on reviews page */
-document.getElementById('reviews-grid').innerHTML = REVIEWS.slice(0, 6).map(reviewCard).join('');
-document.getElementById('reviews-page-grid').innerHTML = REVIEWS.map(reviewCard).join('');
-
-/* FAQ */
+document.getElementById('blog-page-grid').innerHTML = POSTS.map(postCard).join('');
+document.getElementById('reviews-preview-grid').innerHTML = REVIEWS.slice(0, 6).map(reviewCard).join('');
+document.getElementById('reviews-full-grid').innerHTML = REVIEWS.map(reviewCard).join('');
 document.getElementById('faq-list').innerHTML = FAQS.map((f, i) => `
   <details class="py-4" ${i === 0 ? 'open' : ''}>
-    <summary class="flex items-center justify-between font-semibold">
-      ${f.q}
-      <span class="plus text-2xl text-royal">+</span>
-    </summary>
+    <summary class="flex items-center justify-between font-semibold">${f.q}<span class="text-2xl text-royal">+</span></summary>
     <p class="mt-3 text-sm text-ink/70">${f.a}</p>
   </details>`).join('');
 
-/* ============================================================
-   ROUTER
-   ============================================================ */
+/* ---------- ROUTER ---------- */
 function setMeta(title, desc) {
   document.title = title;
-  let m = document.querySelector('meta[name="description"]');
+  const m = document.querySelector('meta[name="description"]');
   if (m) m.setAttribute('content', desc);
 }
 function showPage(name) {
-  document.querySelectorAll('[data-page]').forEach(el => {
+  document.querySelectorAll('.page').forEach(el => {
     el.classList.toggle('active', el.getAttribute('data-page') === name);
   });
 }
@@ -1000,9 +588,13 @@ function renderRoute() {
   const hash = window.location.hash.replace(/^#/, '') || '/';
   const parts = hash.split('/').filter(Boolean);
 
-  if (parts.length === 0) { showPage('home'); setMeta('DKE Global Logistics Limited — Reliable Global Logistics & Freight Solutions', 'Trusted logistics partner since 2018.'); }
-  else if (parts[0] === 'about') { showPage('about'); setMeta('About — DKE Global Logistics Limited', 'Nigeria’s trusted freight and logistics partner.'); }
-  else if (parts[0] === 'services') {
+  if (parts.length === 0) {
+    showPage('home');
+    setMeta('DKE Global Logistics Limited — Reliable Global Logistics & Freight Solutions', 'Trusted logistics partner since 2018.');
+  } else if (parts[0] === 'about') {
+    showPage('about');
+    setMeta('About — DKE Global Logistics Limited', "Nigeria's trusted freight and logistics partner.");
+  } else if (parts[0] === 'services') {
     if (parts[1]) {
       const svc = SERVICES.find(s => s.slug === parts[1]);
       if (!svc) { showPage('404'); return; }
@@ -1010,18 +602,23 @@ function renderRoute() {
       document.getElementById('svc-breadcrumb').textContent = svc.title;
       document.getElementById('svc-title').textContent = svc.title;
       document.getElementById('svc-desc').textContent = svc.desc;
-      const img = document.getElementById('svc-image'); img.src = svc.image; img.alt = svc.title + ' (illustrative)';
+      const img = document.getElementById('svc-image');
+      img.src = svc.image; img.alt = svc.title + ' (illustrative)';
       document.getElementById('svc-related').innerHTML = SERVICES.filter(x => x.slug !== svc.slug).slice(0, 4).map(x =>
-        `<a href="#/service/${x.slug}" class="block rounded-lg border border-silver/40 bg-white p-4 hover:border-royal transition">
-           <p class="font-bold text-navy text-sm">${x.title}</p>
-           <p class="mt-1 text-xs text-ink/60">${x.desc}</p>
-         </a>`).join('');
+        `<a href="#/service/${x.slug}" class="block rounded-lg border border-silver/40 bg-white p-4 hover:border-royal transition"><p class="font-bold text-navy text-sm">${x.title}</p><p class="mt-1 text-xs text-ink/60">${x.desc}</p></a>`
+      ).join('');
       setMeta(`${svc.title} — DKE Global Logistics`, svc.desc);
-    } else { showPage('services'); setMeta('Services — DKE Global Logistics Limited', 'Freight forwarding services.'); }
-  }
-  else if (parts[0] === 'industries') { showPage('industries'); setMeta('Industries — DKE Global Logistics Limited', 'Logistics solutions for retail, tech, manufacturing, construction, and energy.'); }
-  else if (parts[0] === 'reviews') { showPage('reviews'); setMeta('Customer Reviews — DKE Global Logistics Limited', 'Real feedback from clients who move cargo with DKE Global Logistics.'); }
-  else if (parts[0] === 'blog') {
+    } else {
+      showPage('services');
+      setMeta('Services — DKE Global Logistics Limited', 'Freight forwarding services.');
+    }
+  } else if (parts[0] === 'industries') {
+    showPage('industries');
+    setMeta('Industries — DKE Global Logistics Limited', 'Logistics solutions for retail, tech, manufacturing, construction, and energy.');
+  } else if (parts[0] === 'reviews') {
+    showPage('reviews');
+    setMeta('Customer Reviews — DKE Global Logistics Limited', 'Real feedback from clients.');
+  } else if (parts[0] === 'blog') {
     if (parts[1]) {
       const p = POSTS.find(x => x.slug === parts[1]);
       if (!p) { showPage('404'); return; }
@@ -1031,32 +628,101 @@ function renderRoute() {
       document.getElementById('art-title').textContent = p.title;
       document.getElementById('art-summary').textContent = p.summary;
       document.getElementById('art-body').textContent = p.body;
-      const img = document.getElementById('art-image'); img.src = p.image; img.alt = p.title + ' (illustrative)';
+      const img = document.getElementById('art-image');
+      img.src = p.image; img.alt = p.title + ' (illustrative)';
       setMeta(`${p.title} — DKE Global Logistics`, p.summary);
-    } else { showPage('blog'); setMeta('Blog — DKE Global Logistics Limited', 'Logistics insights for importers and exporters.'); }
+    } else {
+      showPage('blog');
+      setMeta('Blog — DKE Global Logistics Limited', 'Logistics insights.');
+    }
+  } else if (parts[0] === 'faq') {
+    showPage('faq');
+    setMeta('FAQ — DKE Global Logistics Limited', 'Frequently asked questions.');
+  } else if (parts[0] === 'contact') {
+    showPage('contact');
+    setMeta('Contact — DKE Global Logistics Limited', 'Address and phone.');
+  } else if (parts[0] === 'quote') {
+    showPage('quote');
+    setMeta('Request a Quote — DKE Global Logistics Limited', 'Tell us about your shipment.');
+  } else {
+    showPage('404');
+    setMeta('Page Not Found — DKE Global Logistics Limited', 'Page not found.');
   }
-  else if (parts[0] === 'faq') { showPage('faq'); setMeta('FAQ — DKE Global Logistics Limited', 'Frequently asked questions.'); }
-  else if (parts[0] === 'contact') { showPage('contact'); setMeta('Contact — DKE Global Logistics Limited', 'Address, phone numbers, and contact form.'); }
-  else if (parts[0] === 'quote') { showPage('quote'); setMeta('Request a Quote — DKE Global Logistics Limited', 'Tell us about your shipment.'); }
-  else { showPage('404'); setMeta('Page Not Found — DKE Global Logistics Limited', 'The page you requested could not be found.'); }
 
+  // Nav active
   document.querySelectorAll('.nav-link').forEach(a => a.classList.remove('text-white', 'font-bold'));
   const first = parts[0] ? '/' + parts[0] : '/';
   const match = document.querySelector(`.nav-link[href="#${first}"]`);
   if (match) match.classList.add('text-white', 'font-bold');
 
+  // Close mobile menu, scroll to top
   document.getElementById('mobileMenu').classList.add('hidden');
   window.scrollTo({ top: 0, behavior: 'auto' });
 
-  /* Re-observe new page reveals */
-  observeReveals();
-  animateCounters();
+  // Kick off animation & counter observers for the now-visible page
+  activatePageAnimations();
 }
 
+/* ---------- OBSERVERS ---------- */
+let revealObserver = null;
+function activatePageAnimations() {
+  // Reveal / review
+  if (revealObserver) revealObserver.disconnect();
+  revealObserver = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('in-view');
+        revealObserver.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.12, rootMargin: '0px 0px -60px 0px' });
+
+  document.querySelectorAll('.page.active .reveal:not(.in-view), .page.active .review-card:not(.in-view)')
+    .forEach(el => revealObserver.observe(el));
+
+  // Counters — reset only counters that are NOT yet done
+  document.querySelectorAll('.page.active [data-counter]').forEach(el => {
+    if (!el.dataset.done) {
+      el.textContent = '0' + (el.dataset.suffix || '');
+    }
+  });
+
+  const counterObs = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      const el = e.target;
+      if (e.isIntersecting && !el.dataset.done) {
+        el.dataset.done = '1';
+        runCounter(el);
+        counterObs.unobserve(el);
+      }
+    });
+  }, { threshold: 0.4 });
+
+  document.querySelectorAll('.page.active [data-counter]:not([data-done])').forEach(el => counterObs.observe(el));
+}
+function runCounter(el) {
+  const target = parseInt(el.dataset.counter, 10) || 0;
+  const suffix = el.dataset.suffix || '';
+  const duration = 1600;
+  const t0 = performance.now();
+  const ease = t => 1 - Math.pow(1 - t, 3);
+  (function step(now) {
+    const p = Math.min((now - t0) / duration, 1);
+    el.textContent = Math.floor(ease(p) * target) + suffix;
+    if (p < 1) requestAnimationFrame(step);
+    else el.textContent = target + suffix;
+  })(t0);
+}
+
+/* ---------- INIT ---------- */
 window.addEventListener('hashchange', renderRoute);
 window.addEventListener('DOMContentLoaded', renderRoute);
+// Also run once immediately in case DOMContentLoaded already fired
+if (document.readyState === 'interactive' || document.readyState === 'complete') {
+  renderRoute();
+}
 
-/* Mobile menu */
+/* ---------- MOBILE MENU ---------- */
 const menuBtn = document.getElementById('menuBtn');
 const mobileMenu = document.getElementById('mobileMenu');
 menuBtn.addEventListener('click', () => {
@@ -1068,140 +734,53 @@ mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => 
   menuBtn.setAttribute('aria-expanded', 'false');
 }));
 
-/* Toast */
-function toast(msg, type = 'success') {
+/* ---------- TOAST ---------- */
+function toast(msg) {
   const t = document.getElementById('toast');
   t.textContent = msg;
-  t.className = 'toast show ' + type;
-  setTimeout(() => { t.className = 'toast'; }, 4000);
+  t.classList.add('show', 'success');
+  setTimeout(() => t.classList.remove('show', 'success'), 4000);
 }
 
-/* ============================================================
-   SCROLL REVEAL (works for .reveal AND .review-card)
-   ============================================================ */
-let revealObserver;
-function observeReveals() {
-  if (revealObserver) revealObserver.disconnect();
-  revealObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('in-view');
-        revealObserver.unobserve(entry.target);
-      }
-    });
-  }, { threshold: 0.12, rootMargin: '0px 0px -60px 0px' });
-
-  document.querySelectorAll('.page.active .reveal:not(.in-view), .page.active .review-card:not(.in-view)')
-    .forEach(el => revealObserver.observe(el));
-}
-
-/* ============================================================
-   ANIMATED COUNTERS
-   ============================================================ */
-const counterTargets = new WeakSet();
-let counterObserver;
-function animateCounters() {
-  if (counterObserver) counterObserver.disconnect();
-  counterObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      const el = entry.target;
-      if (entry.isIntersecting && !counterTargets.has(el)) {
-        counterTargets.add(el);
-        runCounter(el);
-        counterObserver.unobserve(el);
-      }
-    });
-  }, { threshold: 0.4 });
-
-  document.querySelectorAll('.page.active [data-counter]').forEach(el => {
-    if (!counterTargets.has(el)) {
-      el.textContent = '0' + (el.dataset.suffix || '');
-      counterObserver.observe(el);
-    }
-  });
-}
-
-function runCounter(el) {
-  const target = parseInt(el.dataset.counter, 10) || 0;
-  const suffix = el.dataset.suffix || '';
-  const duration = 1600;
-  const startTime = performance.now();
-  const easeOut = (t) => 1 - Math.pow(1 - t, 3);
-
-  function step(now) {
-    const p = Math.min((now - startTime) / duration, 1);
-    const val = Math.floor(easeOut(p) * target);
-    el.textContent = val + suffix;
-    if (p < 1) requestAnimationFrame(step);
-    else {
-      el.textContent = target + suffix;
-      el.classList.remove('counter-anim');
-      void el.offsetWidth;
-      el.classList.add('counter-anim');
-    }
-  }
-  requestAnimationFrame(step);
-}
-
-/* ============================================================
-   FORMS
-   ============================================================ */
-function setErr(name, msg) {
+/* ---------- FORMS ---------- */
+const setErr = (name, msg) => {
   const el = document.querySelector(`[data-error="${name}"]`);
   if (el) el.textContent = msg || '';
-}
+};
 
-const contactForm = document.getElementById('contact-form');
-contactForm.addEventListener('submit', (e) => {
+document.getElementById('contact-form').addEventListener('submit', e => {
   e.preventDefault();
-  const data = Object.fromEntries(new FormData(contactForm).entries());
-  if (data.website) return;
+  const data = Object.fromEntries(new FormData(e.target).entries());
   let ok = true;
   ['name','email','phone','subject','message'].forEach(k => {
     const id = 'c-' + k;
-    if (!(data[k] || '').trim()) { setErr(id, 'This field is required.'); ok = false; }
-    else setErr(id, '');
+    if (!(data[k] || '').trim()) { setErr(id, 'Required.'); ok = false; } else setErr(id, '');
   });
-  if (data.email && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(data.email)) { setErr('c-email', 'Please enter a valid email address.'); ok = false; }
+  if (data.email && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(data.email)) { setErr('c-email', 'Invalid email.'); ok = false; }
   if (!ok) return;
   const body = `Name: ${data.name}\nEmail: ${data.email}\nPhone: ${data.phone}\n\nSubject: ${data.subject}\n\n${data.message}`;
-  window.location.href = `mailto:?subject=${encodeURIComponent('Website Enquiry: ' + data.subject)}&body=${encodeURIComponent(body)}`;
-  toast('Opening your email client…', 'success');
-  contactForm.reset();
+  window.location.href = `mailto:?subject=${encodeURIComponent('Enquiry: ' + data.subject)}&body=${encodeURIComponent(body)}`;
+  toast('Opening your email client…');
+  e.target.reset();
 });
 
-const quoteForm = document.getElementById('quote-form');
-quoteForm.addEventListener('submit', (e) => {
+document.getElementById('quote-form').addEventListener('submit', e => {
   e.preventDefault();
-  const data = Object.fromEntries(new FormData(quoteForm).entries());
+  const data = Object.fromEntries(new FormData(e.target).entries());
   let ok = true;
   ['name','email','phone','service','origin','destination','cargo'].forEach(k => {
     const id = 'q-' + k;
-    if (!(data[k] || '').trim()) { setErr(id, 'This field is required.'); ok = false; }
-    else setErr(id, '');
+    if (!(data[k] || '').trim()) { setErr(id, 'Required.'); ok = false; } else setErr(id, '');
   });
-  if (data.email && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(data.email)) { setErr('q-email', 'Please enter a valid email address.'); ok = false; }
+  if (data.email && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(data.email)) { setErr('q-email', 'Invalid email.'); ok = false; }
   if (!ok) return;
-  const lines = [
-    'Freight Quote Request','',
-    `Name: ${data.name}`,
-    data.company ? `Company: ${data.company}` : null,
-    `Email: ${data.email}`,
-    `Phone: ${data.phone}`,
-    `Service: ${data.service}`,
-    `Origin: ${data.origin}`,
-    `Destination: ${data.destination}`,
-    `Cargo: ${data.cargo}`,
-    data.weight ? `Weight/Volume: ${data.weight}` : null,
-    data.date ? `Preferred date: ${data.date}` : null,
-    data.notes ? `Notes: ${data.notes}` : null,
-  ].filter(Boolean).join('\n');
-  window.location.href = `mailto:?subject=${encodeURIComponent('Quote Request: ' + data.service)}&body=${encodeURIComponent(lines)}`;
-  toast('Opening your email client… Please review and send.', 'success');
-  quoteForm.reset();
+  const lines = ['Quote Request','',`Name: ${data.name}`,data.company?`Company: ${data.company}`:null,`Email: ${data.email}`,`Phone: ${data.phone}`,`Service: ${data.service}`,`Origin: ${data.origin}`,`Destination: ${data.destination}`,`Cargo: ${data.cargo}`,data.weight?`Weight/Volume: ${data.weight}`:null,data.date?`Date: ${data.date}`:null,data.notes?`Notes: ${data.notes}`:null].filter(Boolean).join('\n');
+  window.location.href = `mailto:?subject=${encodeURIComponent('Quote: ' + data.service)}&body=${encodeURIComponent(lines)}`;
+  toast('Opening your email client…');
+  e.target.reset();
 });
 
-/* FAQ accordion */
+/* FAQ accordion single-open */
 document.querySelectorAll('#faq-list details').forEach(d => {
   d.addEventListener('toggle', () => {
     if (d.open) document.querySelectorAll('#faq-list details').forEach(o => { if (o !== d) o.open = false; });
