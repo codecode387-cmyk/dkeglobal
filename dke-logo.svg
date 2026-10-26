@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 460" role="img" aria-labelledby="title desc">
+  <title id="title">DKE Global Logistics Limited</title>
+  <desc id="desc">DKE Global Logistics logo with transparent background and white former-blue areas.</desc>
+  <defs></defs>
+
+  <g>
+    <path d="M360 32 594 166v120L360 421 126 286V166L360 32Z" fill="none" stroke="#a40000" stroke-width="24" stroke-linejoin="round"/>
+    <path d="M88 160h150l-36 34H112L88 160Zm26 62h80l-31 31H137l-23-31Zm518-62H482l36 34h90l24-34Zm-26 62h-80l31 31h26l23-31Z" fill="#ffffff"/>
+
+    <g transform="translate(194 91)">
+      <path d="M92 51c25-33 78-43 125-23 29 13 46 35 54 59-39-25-89-25-125-1-20 14-36 33-42 56-20-4-35-14-43-30-10-21 1-45 31-61Z" fill="#ffffff"/>
+      <path d="M95 55c30-31 79-39 118-19 21 11 36 27 44 46-24-13-53-17-82-10-50 11-84 47-84 90-23-4-39-16-46-35-9-25 10-55 50-72Z" fill="#ffffff"/>
+      <path d="M88 62c12 5 26 8 44 8 17 0 34-3 50-8-10 20-25 38-43 53-18 14-36 21-52 20-16-24-15-50 1-73Z" fill="#ffffff" opacity=".94"/>
+      <path d="M153 98c20-14 47-19 74-12 18 4 35 14 48 27-58-8-105 5-142 40 1-22 8-40 20-55Z" fill="#ffffff" opacity=".9"/>
+      <path d="M117 172c55-35 132-43 228-23-82 10-152 28-213 55l-16-31Z" fill="#ffffff" opacity=".95"/>
+      <path d="M250 110c78 1 141-11 190-35-36 41-97 61-184 58l-6-23Z" fill="#ffffff"/>
+      <path d="M256 133c72 1 131-7 178-25-36 33-94 49-173 47l-5-22Z" fill="#a40000"/>
+      <path d="M61 186c48-38 128-53 241-46 35 2 68 8 99 17-94 1-175 15-245 43-26 11-52 25-78 42l-17-56Z" fill="#ffffff"/>
+      <path d="M38 218c72-12 145-9 220 9-67 17-132 25-196 24l-24-33Z" fill="#ffffff"/>
+      <path d="M111 188c-8 14-12 30-11 47-15-10-24-25-23-40 11-4 22-7 34-7Z" fill="#a40000"/>
+    </g>
+  </g>
+
+  <text x="558" y="295" fill="#061333" font-family="Arial Black, Arial, sans-serif" font-size="22" font-weight="900" text-anchor="middle">RC: 8925507</text>
+  <text x="360" y="348" fill="#ffffff" font-family="Arial Black, Arial, sans-serif" font-size="122" font-weight="900" text-anchor="middle" letter-spacing="-8">DKE</text>
+  <text x="360" y="395" fill="#b00000" font-family="Arial Black, Arial, sans-serif" font-size="38" font-weight="900" text-anchor="middle">GLOBAL LOGISTICS LIMITED</text>
+  <text x="360" y="427" fill="#061333" font-family="Arial, sans-serif" font-size="23" font-weight="700" text-anchor="middle">Beyond Borders. Beyond Stress</text>
+</svg>
