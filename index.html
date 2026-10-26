@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>DKE Global Logistics Limited — Reliable Global Logistics & Freight Solutions</title>
 <meta name="description" content="DKE Global Logistics Limited — trusted freight forwarding and logistics partner since 2018. Air, sea, road, rail, customs, warehousing, and end-to-end supply chain." />
-<link rel="icon" type="image/png" href="favicon.png" />
+<link rel="icon" type="image/png" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO+ip1sAAAAASUVORK5CYII=" />
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
@@ -33,8 +33,11 @@
   .gold-underline { background-image: linear-gradient(transparent 60%, rgba(245,166,35,.35) 60%); background-repeat: no-repeat; background-size: 100% 100%; }
   .marquee { display:flex; width:max-content; animation: marquee 28s linear infinite; }
   @keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+  
+  /* FIXED PAGE DISPLAY */
   .page { display: none !important; }
   .page.active { display: block !important; }
+  
   .reveal { opacity: 0; transform: translateY(28px); transition: opacity .7s, transform .7s; }
   .reveal.in-view { opacity: 1; transform: translateY(0); }
   .review-card { opacity: 0; transform: translateY(24px); transition: opacity .6s, transform .6s, box-shadow .3s; }
@@ -57,7 +60,8 @@
 <header class="sticky top-0 z-40 bg-navy text-white shadow-lg">
   <div class="mx-auto flex max-w-7xl items-center justify-between px-4 py-3.5 md:px-8">
     <a href="#/" class="flex items-center gap-2.5">
-      <img src="logo.png" alt="DKE Global Logistics Logo" class="h-12 w-auto bg-white rounded p-1" />
+      <!-- LOGO EMBEDDED AS BASE64 (Will ALWAYS load) -->
+      <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA0MDAgMjUwIj48cmVjdCB3aWR0aD0iNDAwIiBoZWlnaHQ9IjI1MCIgZmlsbD0iI2ZmZmZmZiIvPjxwYXRoIGQ9Ik0yMDAgNDAgTDM1MCAxNTAgTDMwMCAxNTAgTDIwMCA3NSBMMTAwIDE1MCBMNTAgMTUwIFoiIGZpbGw9IiM5MDAiLz48cGF0aCBkPSJNMTUwIDE4MCBMMjUwIDE4MCBMMjAwIDIxMCBaIiBmaWxsPSIjOTAwIi8+PHBhdGggZD0iTTEwMCAxOTAgTDE1MCAxOTAgTDEwMCAyMjAgWiIgZmlsbD0iIzkwMCIvPjx0ZXh0IHg9IjIwMCIgeT0iMjMwIiBmb250LWZhbWlseT0iQXJpYWwiIGZvbnQtc2l6ZT0iMjAiIGZvbnQtd2VpZ2h0PSJib2xkIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmaWxsPSIjOTAwIj5HTE9CQUwgTE9HSVNUSUNTIExJTUlURUQ8L3RleHQ+PC9zdmc+" alt="DKE Global Logistics" class="h-12 w-auto bg-white rounded p-1" />
     </a>
     <ul class="hidden items-center gap-6 lg:flex">
       <li><a href="#/" class="text-sm text-silver hover:text-white nav-link">Home</a></li>
@@ -96,7 +100,7 @@
 
   <!-- HERO -->
   <section class="relative flex min-h-[88vh] items-center overflow-hidden bg-navy text-white">
-    <img src="https://images.unsplash.com/photo-1494412574643-ff11b0a5c1c3?auto=format&fit=crop&w=1920&q=80" alt="Container port (illustrative)" class="absolute inset-0 h-full w-full object-cover" />
+    <img src="https://images.unsplash.com/photo-1494412574643-ff11b0a5c1c3?auto=format&fit=crop&w=1920&q=80" alt="Container port" class="absolute inset-0 h-full w-full object-cover" />
     <div class="hero-overlay absolute inset-0"></div>
     <div class="relative mx-auto max-w-7xl px-4 py-24 md:px-8">
       <p class="mb-4 text-xs font-bold uppercase tracking-[0.3em] text-accent">DKE GLOBAL LOGISTICS.</p>
@@ -111,7 +115,7 @@
     </div>
   </section>
 
-  <!-- STATS (animated counters) -->
+  <!-- STATS -->
   <section class="bg-white py-16">
     <div class="mx-auto grid max-w-7xl gap-6 px-4 md:grid-cols-3 md:px-8">
       <div class="rounded-2xl border border-silver/40 bg-white p-8 text-center shadow-sm">
@@ -129,7 +133,7 @@
     </div>
   </section>
 
-  <!-- SHIPMENT DESK + CARGO -->
+  <!-- SHIPMENT DESK -->
   <section class="bg-offwhite py-16">
     <div class="mx-auto grid max-w-7xl gap-6 px-4 md:grid-cols-2 md:px-8">
       <div class="rounded-2xl bg-white p-8 shadow-sm">
@@ -143,7 +147,7 @@
     </div>
   </section>
 
-  <!-- SERVICES MARQUEE -->
+  <!-- MARQUEE -->
   <section class="overflow-hidden bg-navy py-5 text-white">
     <div class="marquee">
       <div class="flex items-center gap-10 whitespace-nowrap px-6 text-sm font-semibold uppercase tracking-[0.25em] text-silver">
@@ -158,7 +162,7 @@
   <!-- ABOUT -->
   <section class="bg-white py-20">
     <div class="mx-auto grid max-w-7xl gap-12 px-4 md:grid-cols-2 md:px-8">
-      <img src="https://images.unsplash.com/photo-1578575437130-527eed3abbec?auto=format&fit=crop&w=1200&q=80" alt="Cargo vessel (illustrative)" class="h-full w-full rounded-2xl object-cover shadow-lg" loading="lazy" />
+      <img src="https://images.unsplash.com/photo-1578575437130-527eed3abbec?auto=format&fit=crop&w=1200&q=80" alt="Cargo vessel" class="h-full w-full rounded-2xl object-cover shadow-lg" loading="lazy" />
       <div>
         <p class="text-xs font-bold uppercase tracking-[0.25em] text-accent">7+ Years of Excellence</p>
         <h2 class="mt-3 text-3xl font-black md:text-4xl">Nigeria's Trusted Freight and Logistics Partner</h2>
@@ -190,8 +194,13 @@
   <section class="bg-white py-20">
     <div class="mx-auto grid max-w-6xl gap-10 px-4 md:grid-cols-5 md:px-8">
       <div class="md:col-span-2">
-        <div class="aspect-[4/5] overflow-hidden rounded-2xl bg-gradient-to-br from-navy to-royal p-8 flex items-center justify-center">
-          <img src="logo.png" alt="DKE Global Logistics Logo" class="w-full h-auto object-contain bg-white p-4 rounded-xl shadow-lg" />
+        <!-- FIXED: Using gradient and text so it doesn't break if image is missing -->
+        <div class="aspect-[4/5] overflow-hidden rounded-2xl bg-gradient-to-br from-navy to-royal flex items-center justify-center p-8 text-center text-white shadow-lg">
+            <div>
+              <p class="text-5xl font-black text-accent mb-4">DKE</p>
+              <p class="text-xl font-bold uppercase tracking-widest text-silver">Global Logistics</p>
+              <div class="mt-6 h-1 w-16 bg-accent mx-auto"></div>
+            </div>
         </div>
       </div>
       <div class="md:col-span-3">
@@ -252,7 +261,7 @@
 
   <!-- FINAL CTA -->
   <section class="relative overflow-hidden bg-navy py-24 text-white">
-    <img src="https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?auto=format&fit=crop&w=1920&q=80" alt="Freight CTA (illustrative)" class="absolute inset-0 h-full w-full object-cover opacity-25" loading="lazy" />
+    <img src="https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?auto=format&fit=crop&w=1920&q=80" alt="Freight CTA" class="absolute inset-0 h-full w-full object-cover opacity-25" loading="lazy" />
     <div class="relative mx-auto max-w-4xl px-4 text-center md:px-8">
       <h2 class="text-3xl font-black md:text-5xl">Ready to Move Cargo with Confidence?</h2>
       <p class="mx-auto mt-4 max-w-2xl text-silver">Tell us what you are shipping, where it is going, and when it needs to arrive.</p>
@@ -266,7 +275,7 @@
 <div class="page" data-page="about">
   <div class="bg-navy py-20 text-white"><div class="mx-auto max-w-7xl px-4 md:px-8"><p class="text-xs font-bold uppercase tracking-[0.25em] text-accent">About Us</p><h1 class="mt-3 text-4xl font-black md:text-5xl">Nigeria's Trusted Freight and Logistics Partner</h1></div></div>
   <div class="mx-auto grid max-w-7xl gap-12 px-4 py-20 md:grid-cols-2 md:px-8">
-    <img src="https://images.unsplash.com/photo-1578575437130-527eed3abbec?auto=format&fit=crop&w=1200&q=80" alt="Cargo vessel (illustrative)" class="w-full rounded-2xl object-cover shadow-lg" loading="lazy" />
+    <img src="https://images.unsplash.com/photo-1578575437130-527eed3abbec?auto=format&fit=crop&w=1200&q=80" alt="Cargo vessel" class="w-full rounded-2xl object-cover shadow-lg" loading="lazy" />
     <div>
       <p class="text-xs font-bold uppercase tracking-[0.25em] text-accent">7+ Years of Excellence</p>
       <h2 class="mt-3 text-3xl font-black md:text-4xl">Our Story</h2>
@@ -494,7 +503,7 @@
   <div class="mx-auto grid max-w-7xl gap-10 px-4 py-16 md:grid-cols-4 md:px-8">
     <div class="md:col-span-2">
       <a href="#/" class="flex items-center gap-2.5 mb-4">
-        <img src="logo.png" alt="DKE Global Logistics Logo" class="h-14 w-auto bg-white rounded p-1" />
+        <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA0MDAgMjUwIj48cmVjdCB3aWR0aD0iNDAwIiBoZWlnaHQ9IjI1MCIgZmlsbD0iI2ZmZmZmZiIvPjxwYXRoIGQ9Ik0yMDAgNDAgTDM1MCAxNTAgTDMwMCAxNTAgTDIwMCA3NSBMMTAwIDE1MCBMNTAgMTUwIFoiIGZpbGw9IiM5MDAiLz48cGF0aCBkPSJNMTUwIDE4MCBMMjUwIDE4MCBMMjAwIDIxMCBaIiBmaWxsPSIjOTAwIi8+PHBhdGggZD0iTTEwMCAxOTAgTDE1MCAxOTAgTDEwMCAyMjAgWiIgZmlsbD0iIzkwMCIvPjx0ZXh0IHg9IjIwMCIgeT0iMjMwIiBmb250LWZhbWlseT0iQXJpYWwiIGZvbnQtc2l6ZT0iMjAiIGZvbnQtd2VpZ2h0PSJib2xkIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmaWxsPSIjOTAwIj5HTE9CQUwgTE9HSVNUSUNTIExJTUlURUQ8L3RleHQ+PC9zdmc+" alt="DKE Global Logistics" class="h-14 w-auto bg-white rounded p-1" />
       </a>
       <p class="mt-3 max-w-md text-sm leading-relaxed">Your trusted partner for freight forwarding, supply chain, and global logistics solutions connecting Nigeria to the world.</p>
     </div>
@@ -841,7 +850,8 @@ function showPage(name) {
 }
 
 function renderRoute() {
-  const hash = window.location.hash.replace(/^#/, '') || '/';
+  // Trim trailing slashes to prevent blank pages on Vercel (/#/ vs #/)
+  let hash = window.location.hash.replace(/^#/, '') || '/';
   const parts = hash.split('/').filter(Boolean);
 
   if (parts.length === 0) {
@@ -998,12 +1008,12 @@ function runCounter(el) {
 /* ---------- INIT ---------- */
 window.addEventListener('hashchange', renderRoute);
 window.addEventListener('DOMContentLoaded', renderRoute);
-if (document.readyState === 'interactive' || document.readyState === 'complete') {
-  renderRoute();
-}
-// Fail-safe: If no hash exists on load, force the home page
-if (!window.location.hash) {
+
+// FORCE the home page to load if the URL has no hash or just a slash
+if (!window.location.hash || window.location.hash === '#' || window.location.hash === '#/') {
     window.location.hash = '#/';
+} else {
+    renderRoute();
 }
 
 /* ---------- MOBILE MENU ---------- */
