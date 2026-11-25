@@ -5,634 +5,241 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>DKE Autos Limited — Driven by Trust. Powered by Quality.</title>
 <meta name="description" content="DKE Autos Limited (RC 9616435) — quality vehicles and automotive services from Lagos, Nigeria. A sister company of DKE Global Logistics." />
-<link rel="icon" type="image/jpeg" href="glogo.jpg" />
-
+<link rel="icon" type="image/jpeg" href="logo.jpg" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
-  * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  :root{
+    --navy:#0b2a7a; --navy-deep:#071c52; --red:#b5121b; --red-dark:#8f0e15;
+    --paper:#ffffff; --mist:#f3f5fa; --ink:#14192b; --ink-soft:#4a5167; --line:#dde2ee;
   }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:'Barlow',system-ui,sans-serif;color:var(--ink);background:var(--paper);line-height:1.6;font-size:17px}
+  img{max-width:100%;display:block}
+  a{color:inherit;text-decoration:none}
+  :focus-visible{outline:3px solid var(--red);outline-offset:3px}
+  .wrap{max-width:1180px;margin:0 auto;padding:0 24px}
+  h1,h2,h3{font-family:'Barlow Condensed',sans-serif;line-height:1.05;letter-spacing:.2px}
 
-  body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    color: #1a1a1a;
-    line-height: 1.6;
-    background: #fff;
+  /* header */
+  header{position:sticky;top:0;z-index:50;background:var(--navy-deep);color:#fff;border-bottom:4px solid var(--red)}
+  .bar{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:10px 0}
+  .brand{display:flex;align-items:center;gap:12px}
+  .brand img{height:52px;width:52px;object-fit:cover;border-radius:6px;background:#fff}
+  .brand span{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:22px;letter-spacing:.5px}
+  nav ul{display:flex;gap:26px;list-style:none;align-items:center}
+  nav a{font-size:15px;color:#cdd5ee;font-weight:500}
+  nav a:hover{color:#fff}
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:13px 26px;border-radius:6px;font-weight:600;font-size:16px;border:2px solid transparent;transition:background .2s,color .2s,border-color .2s;cursor:pointer;font-family:inherit}
+  .btn-red{background:var(--red);color:#fff}
+  .btn-red:hover{background:var(--red-dark)}
+  .btn-line{border-color:#fff;color:#fff}
+  .btn-line:hover{background:#fff;color:var(--navy)}
+  .btn-navy{background:var(--navy);color:#fff}
+  .btn-navy:hover{background:var(--navy-deep)}
+  nav .btn{padding:9px 18px;font-size:15px;color:#fff}
+  #menuBtn{display:none;background:none;border:0;color:#fff;cursor:pointer}
+  #mobileNav{display:none;background:var(--navy-deep);padding:0 24px 18px}
+  #mobileNav a{display:block;padding:11px 0;color:#cdd5ee;border-top:1px solid rgba(255,255,255,.1)}
+  #mobileNav.open{display:block}
+
+  /* hero */
+  .hero{background:var(--navy-deep);color:#fff;position:relative;overflow:hidden}
+  .hero::before{content:"";position:absolute;inset:0;background:
+    linear-gradient(115deg,transparent 0 58%,rgba(181,18,27,.9) 58% 61%,transparent 61% 64%,rgba(11,42,122,.9) 64% 100%);}
+  .hero .wrap{position:relative;display:grid;grid-template-columns:1.15fr .85fr;gap:48px;align-items:center;padding-top:72px;padding-bottom:72px}
+  .hero h1{font-size:clamp(46px,7vw,92px);font-weight:800;text-transform:uppercase}
+  .hero h1 em{font-style:normal;color:#ff4a54}
+  .hero p.lead{margin-top:20px;font-size:20px;color:#d7defa;max-width:34em}
+  .hero .actions{margin-top:32px;display:flex;flex-wrap:wrap;gap:12px}
+  .logo-card{background:#fff;border-radius:14px;padding:14px;box-shadow:0 30px 60px -20px rgba(0,0,0,.55);max-width:430px;margin-left:auto}
+  .logo-card img{width:100%;height:auto;border-radius:8px}
+
+  /* sections */
+  section{padding:84px 0}
+  .head{max-width:640px;margin-bottom:44px}
+  .head h2{font-size:clamp(34px,4.6vw,52px);font-weight:800;color:var(--navy);text-transform:uppercase}
+  .head p{margin-top:12px;color:var(--ink-soft)}
+  .mist{background:var(--mist)}
+
+  .services{display:grid;grid-template-columns:repeat(2,1fr);gap:0;border:1px solid var(--line);background:var(--paper)}
+  .svc{padding:34px 32px;border-bottom:1px solid var(--line);border-right:1px solid var(--line);position:relative}
+  .svc:nth-child(2n){border-right:0}
+  .svc:nth-last-child(-n+2){border-bottom:0}
+  .svc::before{content:"";position:absolute;left:0;top:34px;width:5px;height:34px;background:var(--red)}
+  .svc h3{font-size:30px;font-weight:700;color:var(--navy);margin-left:6px}
+  .svc p{margin-top:10px;color:var(--ink-soft);margin-left:6px}
+
+  .why{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:start}
+  .why h2{font-size:clamp(34px,4.6vw,52px);font-weight:800;color:var(--navy);text-transform:uppercase}
+  .why ul{list-style:none;display:grid;gap:22px}
+  .why li{display:grid;grid-template-columns:auto 1fr;gap:16px}
+  .why li b{display:block;font-family:'Barlow Condensed',sans-serif;font-size:24px;color:var(--navy);line-height:1.1}
+  .why li span.tick{width:30px;height:30px;border-radius:50%;background:var(--red);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:15px;margin-top:2px}
+  .why li p{color:var(--ink-soft);margin-top:4px}
+
+  .cta{background:var(--navy);color:#fff;text-align:left}
+  .cta .wrap{display:flex;flex-wrap:wrap;gap:24px;align-items:center;justify-content:space-between}
+  .cta h2{font-size:clamp(34px,4.6vw,54px);font-weight:800;text-transform:uppercase;max-width:15em}
+  .cta p{color:#cdd5ee;margin-top:8px}
+
+  .contact{display:grid;grid-template-columns:1fr 1fr;gap:40px}
+  .box{border:1px solid var(--line);padding:32px;background:#fff}
+  .box h3{font-size:22px;color:var(--red);font-weight:700;margin-bottom:6px;text-transform:uppercase}
+  .box p+h3{margin-top:22px}
+  .box a:hover{color:var(--red)}
+  .sister{display:flex;flex-wrap:wrap;gap:16px;align-items:center;justify-content:space-between;border-left:6px solid var(--red);background:var(--mist);padding:26px 30px}
+  .sister h3{font-size:28px;color:var(--navy)}
+  .sister p{color:var(--ink-soft)}
+
+  footer{background:var(--navy-deep);color:#b9c3e6;font-size:15px}
+  footer .wrap{display:flex;flex-wrap:wrap;gap:16px;justify-content:space-between;padding-top:30px;padding-bottom:30px}
+  footer a:hover{color:#fff}
+
+  @media (max-width:900px){
+    nav{display:none} #menuBtn{display:block}
+    .hero .wrap{grid-template-columns:1fr;padding-top:48px;padding-bottom:56px}
+    .hero::before{background:linear-gradient(180deg,transparent 0 70%,rgba(181,18,27,.9) 70% 73%,rgba(11,42,122,.9) 73% 100%)}
+    .logo-card{margin:0 auto}
+    .services{grid-template-columns:1fr}
+    .svc{border-right:0 !important;border-bottom:1px solid var(--line) !important}
+    .svc:last-child{border-bottom:0 !important}
+    .why,.contact{grid-template-columns:1fr}
+    section{padding:60px 0}
   }
-
-  /* ===== HEADER / NAVIGATION ===== */
-  header {
-    background: #0a1f44;
-    color: #fff;
-    padding: 0.75rem 2rem;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    box-shadow: 0 2px 12px rgba(0,0,0,0.15);
-  }
-
-  .header-inner {
-    max-width: 1200px;
-    margin: 0 auto;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 1rem;
-  }
-
-  .logo-wrap {
-    display: flex;
-    align-items: center;
-    gap: 0.75rem;
-    text-decoration: none;
-    color: #fff;
-  }
-
-  .logo-wrap img {
-    height: 58px;
-    width: auto;
-    border-radius: 6px;
-    filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3));
-  }
-
-  .logo-text {
-    display: flex;
-    flex-direction: column;
-    line-height: 1.1;
-  }
-
-  .logo-text strong {
-    font-size: 1.35rem;
-    font-weight: 800;
-    letter-spacing: 0.5px;
-    text-transform: uppercase;
-  }
-
-  .logo-text span {
-    font-size: 0.72rem;
-    font-weight: 600;
-    letter-spacing: 1.5px;
-    text-transform: uppercase;
-    color: #c9a84c;
-  }
-
-  nav ul {
-    display: flex;
-    list-style: none;
-    gap: 1.75rem;
-    align-items: center;
-  }
-
-  nav a {
-    color: #e8e8e8;
-    text-decoration: none;
-    font-size: 0.92rem;
-    font-weight: 600;
-    transition: color 0.2s;
-  }
-
-  nav a:hover,
-  nav a.active {
-    color: #c9a84c;
-  }
-
-  .nav-cta {
-    background: #c9a84c;
-    color: #0a1f44 !important;
-    padding: 0.5rem 1.25rem;
-    border-radius: 4px;
-    font-weight: 700 !important;
-  }
-
-  .nav-cta:hover {
-    background: #e0bc5e;
-    color: #0a1f44 !important;
-  }
-
-  .hamburger {
-    display: none;
-    background: none;
-    border: none;
-    color: #fff;
-    font-size: 1.75rem;
-    cursor: pointer;
-  }
-
-  /* ===== HERO ===== */
-  .hero {
-    background: linear-gradient(135deg, #0a1f44 0%, #163b7a 100%);
-    color: #fff;
-    padding: 5rem 2rem;
-    text-align: center;
-  }
-
-  .hero h1 {
-    font-size: 2.8rem;
-    font-weight: 800;
-    margin-bottom: 1rem;
-    letter-spacing: 0.5px;
-  }
-
-  .hero p {
-    font-size: 1.15rem;
-    max-width: 640px;
-    margin: 0 auto 2rem;
-    color: #d0d8e8;
-  }
-
-  .hero-btns {
-    display: flex;
-    gap: 1rem;
-    justify-content: center;
-    flex-wrap: wrap;
-  }
-
-  .btn {
-    display: inline-block;
-    padding: 0.85rem 2rem;
-    border-radius: 5px;
-    text-decoration: none;
-    font-weight: 700;
-    font-size: 0.95rem;
-    transition: all 0.25s;
-    border: 2px solid transparent;
-  }
-
-  .btn-primary {
-    background: #c9a84c;
-    color: #0a1f44;
-  }
-
-  .btn-primary:hover {
-    background: #e0bc5e;
-    transform: translateY(-2px);
-  }
-
-  .btn-outline {
-    border-color: #c9a84c;
-    color: #c9a84c;
-  }
-
-  .btn-outline:hover {
-    background: #c9a84c;
-    color: #0a1f44;
-    transform: translateY(-2px);
-  }
-
-  /* ===== SECTIONS ===== */
-  section {
-    padding: 4rem 2rem;
-  }
-
-  .container {
-    max-width: 1100px;
-    margin: 0 auto;
-  }
-
-  .section-title {
-    font-size: 2rem;
-    font-weight: 800;
-    color: #0a1f44;
-    margin-bottom: 0.5rem;
-    text-align: center;
-  }
-
-  .section-subtitle {
-    text-align: center;
-    color: #666;
-    max-width: 600px;
-    margin: 0 auto 2.5rem;
-    font-size: 1.02rem;
-  }
-
-  /* ===== SERVICES ===== */
-  .services-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 1.5rem;
-  }
-
-  .service-card {
-    background: #f8f9fc;
-    border: 1px solid #e4e8f0;
-    border-radius: 10px;
-    padding: 2rem 1.75rem;
-    transition: transform 0.25s, box-shadow 0.25s;
-  }
-
-  .service-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 12px 28px rgba(10,31,68,0.12);
-  }
-
-  .service-icon {
-    font-size: 2rem;
-    margin-bottom: 1rem;
-  }
-
-  .service-card h3 {
-    font-size: 1.2rem;
-    font-weight: 700;
-    color: #0a1f44;
-    margin-bottom: 0.6rem;
-  }
-
-  .service-card p {
-    color: #555;
-    font-size: 0.95rem;
-  }
-
-  /* ===== WHY US ===== */
-  .why-section {
-    background: #f8f9fc;
-  }
-
-  .why-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-    gap: 1.5rem;
-  }
-
-  .why-card {
-    text-align: center;
-    padding: 1.75rem 1.25rem;
-  }
-
-  .why-card .num {
-    display: inline-block;
-    width: 48px;
-    height: 48px;
-    line-height: 48px;
-    background: #0a1f44;
-    color: #c9a84c;
-    border-radius: 50%;
-    font-weight: 800;
-    font-size: 1.15rem;
-    margin-bottom: 1rem;
-  }
-
-  .why-card h3 {
-    font-size: 1.1rem;
-    font-weight: 700;
-    color: #0a1f44;
-    margin-bottom: 0.5rem;
-  }
-
-  .why-card p {
-    color: #666;
-    font-size: 0.92rem;
-  }
-
-  /* ===== ABOUT ===== */
-  .about-content {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 3rem;
-    align-items: center;
-  }
-
-  .about-text h2 {
-    font-size: 1.9rem;
-    font-weight: 800;
-    color: #0a1f44;
-    margin-bottom: 1rem;
-  }
-
-  .about-text p {
-    color: #555;
-    margin-bottom: 1rem;
-    font-size: 0.98rem;
-  }
-
-  .about-highlight {
-    background: #0a1f44;
-    color: #fff;
-    border-radius: 12px;
-    padding: 2rem;
-  }
-
-  .about-highlight h3 {
-    color: #c9a84c;
-    font-size: 1.1rem;
-    font-weight: 700;
-    margin-bottom: 1rem;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-  }
-
-  .about-highlight ul {
-    list-style: none;
-  }
-
-  .about-highlight li {
-    padding: 0.5rem 0;
-    border-bottom: 1px solid rgba(255,255,255,0.1);
-    font-size: 0.95rem;
-  }
-
-  .about-highlight li:last-child {
-    border-bottom: none;
-  }
-
-  .about-highlight li::before {
-    content: "✓ ";
-    color: #c9a84c;
-    font-weight: 700;
-  }
-
-  /* ===== CONTACT ===== */
-  .contact-section {
-    background: #0a1f44;
-    color: #fff;
-  }
-
-  .contact-section .section-title {
-    color: #fff;
-  }
-
-  .contact-section .section-subtitle {
-    color: #b8c4db;
-  }
-
-  .contact-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    gap: 1.5rem;
-    margin-top: 2rem;
-  }
-
-  .contact-card {
-    background: rgba(255,255,255,0.06);
-    border: 1px solid rgba(255,255,255,0.12);
-    border-radius: 10px;
-    padding: 1.75rem;
-    text-align: center;
-  }
-
-  .contact-card .c-icon {
-    font-size: 1.75rem;
-    margin-bottom: 0.75rem;
-  }
-
-  .contact-card h3 {
-    font-size: 1rem;
-    font-weight: 700;
-    color: #c9a84c;
-    margin-bottom: 0.5rem;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-  }
-
-  .contact-card p,
-  .contact-card a {
-    color: #dfe5f0;
-    text-decoration: none;
-    font-size: 0.95rem;
-    display: block;
-    line-height: 1.7;
-  }
-
-  .contact-card a:hover {
-    color: #c9a84c;
-  }
-
-  /* ===== FOOTER ===== */
-  footer {
-    background: #061530;
-    color: #8a9bb8;
-    text-align: center;
-    padding: 2rem;
-    font-size: 0.85rem;
-  }
-
-  footer strong {
-    color: #c9a84c;
-  }
-
-  /* ===== RESPONSIVE ===== */
-  @media (max-width: 900px) {
-    .about-content {
-      grid-template-columns: 1fr;
-    }
-  }
-
-  @media (max-width: 768px) {
-    .hamburger {
-      display: block;
-    }
-
-    nav ul {
-      display: none;
-      position: absolute;
-      top: 100%;
-      left: 0;
-      right: 0;
-      background: #0a1f44;
-      flex-direction: column;
-      padding: 1.5rem 2rem;
-      gap: 1rem;
-      box-shadow: 0 8px 20px rgba(0,0,0,0.3);
-    }
-
-    nav ul.open {
-      display: flex;
-    }
-
-    .hero h1 {
-      font-size: 2rem;
-    }
-
-    .hero {
-      padding: 3.5rem 1.5rem;
-    }
-
-    .logo-text strong {
-      font-size: 1.05rem;
-    }
-
-    .logo-wrap img {
-      height: 44px;
-    }
-  }
+  @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none !important}}
 </style>
 </head>
 <body>
 
-<!-- ===== HEADER ===== -->
 <header>
-  <div class="header-inner">
-    <a href="#home" class="logo-wrap">
-      <img src="glogo.jpg" alt="DKE Autos Limited Logo" />
-      <span class="logo-text">
-        <strong>DKE Autos</strong>
-        <span>Driven by Trust</span>
-      </span>
+  <div class="wrap bar">
+    <a href="#top" class="brand" aria-label="DKE Autos Limited home">
+      <img src="logo.jpg" alt="DKE Autos logo" />
+      <span>DKE Autos Limited</span>
     </a>
-
-    <button class="hamburger" aria-label="Menu" onclick="document.querySelector('nav ul').classList.toggle('open')">☰</button>
-
-    <nav>
+    <nav aria-label="Main">
       <ul>
-        <li><a href="#home">Home</a></li>
+        <li><a href="index.html">DKE Global Logistics</a></li>
         <li><a href="#services">Services</a></li>
-        <li><a href="#about">About</a></li>
         <li><a href="#why">Why Us</a></li>
-        <li><a href="#contact" class="nav-cta">Contact</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><a href="#contact" class="btn btn-red">Enquire Now</a></li>
       </ul>
     </nav>
+    <button id="menuBtn" aria-label="Toggle menu" aria-expanded="false">
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+    </button>
+  </div>
+  <div id="mobileNav">
+    <a href="index.html">DKE Global Logistics</a>
+    <a href="#services">Services</a>
+    <a href="#why">Why Us</a>
+    <a href="#contact">Contact</a>
   </div>
 </header>
 
-<!-- ===== HERO ===== -->
-<section class="hero" id="home">
-  <h1>Driven by Trust.<br>Powered by Quality.</h1>
-  <p>DKE Autos Limited — your trusted partner for quality vehicles and automotive services in Lagos, Nigeria. A proud sister company of DKE Global Logistics.</p>
-  <div class="hero-btns">
-    <a href="#services" class="btn btn-primary">Explore Services</a>
-    <a href="#contact" class="btn btn-outline">Get in Touch</a>
-  </div>
-</section>
+<main id="top">
 
-<!-- ===== SERVICES ===== -->
-<section id="services">
-  <div class="container">
-    <h2 class="section-title">What We Do</h2>
-    <p class="section-subtitle">Comprehensive automotive solutions backed by years of industry expertise.</p>
-
-    <div class="services-grid">
-      <div class="service-card">
-        <div class="service-icon">🚗</div>
-        <h3>Vehicle Sales</h3>
-        <p>Quality new and pre-owned vehicles carefully sourced to match your budget and lifestyle needs.</p>
+  <div class="hero">
+    <div class="wrap">
+      <div>
+        <h1>Driven by trust.<br><em>Powered by quality.</em></h1>
+        <p class="lead">DKE Autos Limited brings you dependable vehicles and honest automotive service from Lagos, Nigeria.</p>
+        <div class="actions">
+          <a href="#contact" class="btn btn-red">Enquire About a Vehicle</a>
+          <a href="tel:+2348039426990" class="btn btn-line">Call Us</a>
+        </div>
       </div>
-      <div class="service-card">
-        <div class="service-icon">🔧</div>
-        <h3>Auto Maintenance</h3>
-        <p>Routine servicing, diagnostics, and repairs by experienced technicians using quality parts.</p>
-      </div>
-      <div class="service-card">
-        <div class="service-icon">🚙</div>
-        <h3>Vehicle Inspection</h3>
-        <p>Thorough pre-purchase and routine inspections to ensure safety, reliability, and peace of mind.</p>
-      </div>
-      <div class="service-card">
-        <div class="service-icon">📋</div>
-        <h3>Documentation Support</h3>
-        <p>Assistance with vehicle registration, papers, and compliance to keep you road-ready.</p>
-      </div>
-      <div class="service-card">
-        <div class="service-icon">🚚</div>
-        <h3>Logistics Support</h3>
-        <p>Seamless vehicle movement and delivery supported by our sister company DKE Global Logistics.</p>
-      </div>
-      <div class="service-card">
-        <div class="service-icon">💡</div>
-        <h3>Advisory Services</h3>
-        <p>Professional advice on vehicle selection, maintenance schedules, and long-term ownership costs.</p>
+      <div class="logo-card">
+        <img src="logo.jpg" alt="DKE Autos Limited, RC 9616435 — Driven by Trust. Powered by Quality." />
       </div>
     </div>
   </div>
-</section>
 
-<!-- ===== WHY US ===== -->
-<section class="why-section" id="why">
-  <div class="container">
-    <h2 class="section-title">Why Choose DKE Autos?</h2>
-    <p class="section-subtitle">We combine integrity, expertise, and a customer-first approach.</p>
-
-    <div class="why-grid">
-      <div class="why-card">
-        <span class="num">01</span>
-        <h3>Trusted & Registered</h3>
-        <p>Fully registered company (RC 9616435) with a reputation built on transparency.</p>
+  <section id="services">
+    <div class="wrap">
+      <div class="head">
+        <h2>What we do</h2>
+        <p>Whether you are buying for yourself or for your business, we keep the process clear from first enquiry to handover.</p>
       </div>
-      <div class="why-card">
-        <span class="num">02</span>
-        <h3>Quality Guaranteed</h3>
-        <p>Every vehicle and service meets rigorous quality and safety standards.</p>
-      </div>
-      <div class="why-card">
-        <span class="num">03</span>
-        <h3>Expert Team</h3>
-        <p>Seasoned automotive professionals dedicated to your satisfaction.</p>
-      </div>
-      <div class="why-card">
-        <span class="num">04</span>
-        <h3>Customer First</h3>
-        <p>Personalised service and after-sales support that puts you first.</p>
+      <div class="services">
+        <div class="svc"><h3>Vehicle Sales</h3><p>Quality cars checked and presented honestly, so you know what you are buying.</p></div>
+        <div class="svc"><h3>Vehicle Sourcing</h3><p>Tell us the make, model, and budget. We source it for you locally or from abroad.</p></div>
+        <div class="svc"><h3>Inspection &amp; Verification</h3><p>Condition checks and document verification before you commit your money.</p></div>
+        <div class="svc"><h3>Import &amp; Clearance Support</h3><p>Backed by our sister company, DKE Global Logistics, for shipping and customs clearance.</p></div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- ===== ABOUT ===== -->
-<section id="about">
-  <div class="container">
-    <div class="about-content">
-      <div class="about-text">
-        <h2>About DKE Autos Limited</h2>
-        <p>DKE Autos Limited is a Lagos-based automotive company committed to delivering quality vehicles and reliable automotive services to individuals and businesses across Nigeria.</p>
-        <p>As a sister company of <strong>DKE Global Logistics</strong>, we leverage deep industry connections and logistics expertise to offer a seamless end-to-end automotive experience — from sourcing and inspection to delivery and after-sales support.</p>
-        <p>Our promise is simple: <strong>Driven by Trust. Powered by Quality.</strong></p>
+  <section class="mist" id="why">
+    <div class="wrap why">
+      <h2>Why buy from DKE Autos</h2>
+      <ul>
+        <li><span class="tick">✓</span><div><b>Registered company</b><p>DKE Autos Limited, RC Number 9616435.</p></div></li>
+        <li><span class="tick">✓</span><div><b>Honest communication</b><p>Clear answers on condition, price, and timelines, with no surprises.</p></div></li>
+        <li><span class="tick">✓</span><div><b>Logistics expertise behind you</b><p>Shipping, clearance, and delivery handled by a team that does it every day.</p></div></li>
+        <li><span class="tick">✓</span><div><b>Quality first</b><p>We would rather turn down a weak vehicle than sell it.</p></div></li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="cta">
+    <div class="wrap">
+      <div>
+        <h2>Looking for a specific vehicle?</h2>
+        <p>Send us the make, model, year, and your budget.</p>
       </div>
+      <a href="https://wa.me/2348039426990?text=Hello%20DKE%20Autos%2C%20I%20am%20looking%20for%20a%20vehicle." target="_blank" rel="noopener" class="btn btn-red">Chat on WhatsApp</a>
+    </div>
+  </section>
 
-      <div class="about-highlight">
-        <h3>Company Highlights</h3>
-        <ul>
-          <li>Registered RC: 9616435</li>
-          <li>Based in Lagos, Nigeria</li>
-          <li>Sister company of DKE Global Logistics</li>
-          <li>Quality vehicles & automotive services</li>
-          <li>Customer-focused approach</li>
-          <li>Trusted by individuals & businesses</li>
-        </ul>
+  <section id="contact">
+    <div class="wrap">
+      <div class="head"><h2>Visit or contact us</h2></div>
+      <div class="contact">
+        <div class="box">
+          <h3>Office address</h3>
+          <p>No. 4, Femi Fatoyinbo Street, Off Bishop Ademowo Crescent, Ago Palace, Lagos, Nigeria.</p>
+          <h3>Phone / WhatsApp</h3>
+          <p>
+            <a href="tel:+2348039426990">+234 803 942 6990</a> (WhatsApp)<br>
+            <a href="tel:+2347085108381">+234 708 510 8381</a> (WhatsApp)
+          </p>
+          <h3>Email</h3>
+          <p><a href="mailto:info@dkegloballogistics.com">info@dkegloballogistics.com</a></p>
+          <h3>Registration</h3>
+          <p>RC Number 9616435</p>
+        </div>
+        <div class="box" style="padding:0;overflow:hidden;min-height:320px">
+          <iframe title="Map of Ago Palace, Lagos" src="https://www.google.com/maps?q=Ago+Palace,+Lagos,+Nigeria&output=embed" width="100%" height="100%" style="border:0;min-height:320px" loading="lazy" allowfullscreen referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+      </div>
+      <div class="sister" style="margin-top:40px">
+        <div>
+          <h3>Need to ship or clear cargo?</h3>
+          <p>DKE Autos is a sister company of DKE Global Logistics Limited.</p>
+        </div>
+        <a href="index.html" class="btn btn-navy">Visit DKE Global Logistics</a>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- ===== CONTACT ===== -->
-<section class="contact-section" id="contact">
-  <div class="container">
-    <h2 class="section-title">Get in Touch</h2>
-    <p class="section-subtitle">Reach out today — we're ready to help you find the right vehicle or service.</p>
+</main>
 
-    <div class="contact-grid">
-      <div class="contact-card">
-        <div class="c-icon">📞</div>
-        <h3>Call / WhatsApp</h3>
-        <a href="tel:+2348039426990">+234 803 942 6990</a>
-        <a href="https://wa.me/2348039426990" target="_blank" rel="noopener">Chat on WhatsApp</a>
-      </div>
-
-      <div class="contact-card">
-        <div class="c-icon">📱</div>
-        <h3>Second Line</h3>
-        <a href="tel:+2347085108381">+234 708 510 8381</a>
-        <a href="https://wa.me/2347085108381" target="_blank" rel="noopener">Chat on WhatsApp</a>
-      </div>
-
-      <div class="contact-card">
-        <div class="c-icon">✉️</div>
-        <h3>Email</h3>
-        <a href="mailto:info@dkegloballogistics.com">info@dkegloballogistics.com</a>
-      </div>
-
-      <div class="contact-card">
-        <div class="c-icon">📍</div>
-        <h3>Location</h3>
-        <p>Lagos, Nigeria</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ===== FOOTER ===== -->
 <footer>
-  <p>&copy; 2025 <strong>DKE Autos Limited</strong> (RC 9616435). All rights reserved.</p>
-  <p style="margin-top:0.4rem;">A sister company of DKE Global Logistics — Driven by Trust. Powered by Quality.</p>
+  <div class="wrap">
+    <p>© 2026 DKE Autos Limited. RC 9616435.</p>
+    <p><a href="index.html">DKE Global Logistics</a> &nbsp;|&nbsp; <a href="#top">Back to top</a></p>
+  </div>
 </footer>
 
+<script>
+  var b=document.getElementById('menuBtn'),m=document.getElementById('mobileNav');
+  b.addEventListener('click',function(){var o=m.classList.toggle('open');b.setAttribute('aria-expanded',String(o));});
+  m.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){m.classList.remove('open');b.setAttribute('aria-expanded','false');});});
+</script>
 </body>
 </html>
